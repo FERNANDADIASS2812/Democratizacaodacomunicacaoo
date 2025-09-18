@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democratização da Comunicação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Teko:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5e5e5;
+            --largura-nav: 260px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .hamburger-menu {
+            display: block;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1100;
+            background: var(--cor-texto-principal);
+            color: var(--cor-branco);
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .side-nav {
+            background-color: var(--cor-texto-principal);
+            border-right: 1px solid #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--largura-nav);
+            height: 100vh;
+            z-index: 1200;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .side-nav.active {
+            transform: translateX(0);
+        }
+
+        .close-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 36px;
+            color: var(--cor-branco);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .side-nav.active .close-btn {
+            display: block;
+        }
+
+        .content-wrapper {
+            margin-left: 0;
+            width: 100%;
+            padding-top: 1px;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .content-wrapper.menu-active {
+            filter: brightness(0.5);
+            pointer-events: none;
+        }
+
+        .side-nav .nav-title {
+            font-family: 'Teko', sans-serif;
+            font-weight: 600;
+            font-size: 1.8em;
+            color: var(--cor-branco);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .side-nav .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        .side-nav .nav-links li {
+            margin-bottom: 8px;
+        }
+
+        .side-nav .nav-links a {
+            display: block;
+            padding: 12px 18px;
+            text-decoration: none;
+            color: #ccc;
+            font-size: 0.9em;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s, color 0.3s;
+            border-left: 4px solid transparent;
+            border-radius: 4px;
+        }
+
+        .side-nav .nav-links a:hover {
+            background-color: #333;
+            color: var(--cor-branco);
+        }
+
+        .side-nav .nav-links a.nav-active {
+            color: var(--cor-branco);
+            border-left-color: var(--cor-branco);
+            background-color: transparent;
+        }
+        
+        /* --- IMAGEM DE FUNDO --- */
+        .hero-section {
+            position: relative;
+            text-align: left; 
+            border-bottom: 1px solid var(--cor-borda);
+            padding: 200px 40px; 
+            color: var(--cor-branco);
+            background-image: url("img/WhatsApp Image 2025-07-17 at 8.19.48 AM.jpg");
+            background-size: 100% auto; 
+            background-position: center bottom; 
+            background-repeat: no-repeat;
+            display: flex; /* Adicionado para melhor controle de alinhamento */
+            align-items: center; 
+        }
+
+        /* Overlay escuro para melhorar a legibilidade do texto */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Garante que o texto fique acima do overlay */
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 5em;
+            font-weight: 600;
+            color: var(--cor-branco);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin: 0; /* <<< MUDANÇA PRINCIPAL: Removido o 'auto' para não centralizar */
+            max-width: 800px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        
+        .main-content {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            padding: 40px;
+            margin-bottom: 40px;
+            scroll-margin-top: 40px;
+            border-radius: 8px;
+        }
+        
+        .content-section > h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.5em;
+            font-weight: 600;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin: 0 0 15px 0;
+            color: var(--cor-texto-principal);
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .content-section > h2::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .content-section.expanded > h2::after {
+            content: '−';
+        }
+        
+        .content-section > p,
+        #visao-geral > .paragraph-container {
+            border-top: 1px solid var(--cor-borda);
+            padding-top: 20px;
+        }
+
+        .content-section > p {
+            max-width: 800px;
+            font-size: 1.05em;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 30px;
+        }
+
+        #visao-geral p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 1em;
+            border-top: none;
+            padding-top: 0;
+        }
+        
+        .report-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out;
+        }
+
+        .content-section.expanded .report-list {
+            max-height: 2000px;
+            margin-top: 20px;
+            border-top: 1px solid var(--cor-borda);
+        }
+
+        .report-list li {
+            border-top: 1px solid var(--cor-borda);
+        }
+        
+        .report-list li:first-child {
+            border-top: none;
+        }
+
+        .report-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 15px;
+            text-decoration: none;
+            color: var(--cor-texto-principal);
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+        
+        .report-list a .arrow {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .report-list a:hover {
+            background-color: #f3f3f3;
+        }
+
+        .report-list a:hover .arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .report-list span {
+            display: block;
+            font-size: 0.8em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-top: 5px;
+        }
+        
+        .read-more-link {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .read-more-link a {
+            font-family: 'roboto mono', monospace;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333137;
+        }
+
+        .read-more-link a:hover {
+            text-decoration: underline;
+        }
+
+        .site-footer {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            padding: 20px 40px;
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            line-height: 1.8;
+        }
+
+        .site-footer p {
+            margin: 10px auto;
+            max-width: 800px;
+        }
+
+        .site-footer strong {
+            color: var(--cor-branco);
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 15px; }
+            .main-content, .content-section, .hero-section { padding: 20px; }
+            .hero-section { padding-top: 100px; padding-bottom: 100px; }
+            .content-section h2 { font-size: 2.2em; }
+            .hero-text h1 { font-size: 2.8em; }
+        }
+
+         @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2.2em; }
+        }
+    </style>
+</head>
+<body>
+    <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">☰</button>
+
+    <nav class="side-nav" id="side-nav">
+        <button class="close-btn" id="close-btn" aria-label="Fechar menu">&times;</button>
+        <div class="nav-title">A luta pela democratização da comunicação</div>
+        <ul class="nav-links">
+            <li><a href="#visao-geral" class="nav-active">Visão Geral</a></li>
+            <li><a href="#radios">Rádios Comunitárias</a></li>
+            <li><a href="#desertos">Desertos de Notícias</a></li>
+            <li><a href="#Outras experiências">Outras experiências</a></li>
+            <li><a href="#perfis">Perfis</a></li>
+            <li><a href="#legislacao">Legislação</a></li>
+            <li><a href="#marco-civil">Marco Civil</a></li>
+            <li><a href="#Associação de Radiodifusão Comunitária">Associação de Radiodifusão Comunitária</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper" id="content-wrapper">
+        <header id="inicio" class="hero-section">
+            <div class="hero-text">
+                <h1>A luta pela democratização da comunicação</h1>
+            </div>
+            </header>
+
+        <main class="main-content">
+            <section id="visao-geral" class="content-section">
+                
+                <div class="paragraph-container">
+                    <p>A história da comunicação no Brasil mostra que a luta pela democratização nunca foi interrompida, mesmo que os desafios se transformem com as novas tecnologias e o cenário político. Em um momento em que as redes sociais e os algoritmos dominam o fluxo de informação, o tema da democratização da comunicação ganha ainda mais relevância. A desinformação e a manipulação informativa colocam em risco a própria democracia, o que torna imprescindível a garantia de uma comunicação plural, diversificada e crítica. Defender o direito à comunicação é, portanto, defender a soberania popular sobre os meios de informação, e assegurar que todos tenham acesso democrático e qualificado à informação.</p>
+                    <p>Esta grande reportagem mostra o cenário da democratização da comunicação no Brasil trazendo temas como os veículos de comunicação comunitária, associações em defesa da causa, o deserto de notícias, a legislação e o trabalho de associações de moradores.</p>
+                    <p class="read-more-link"><strong><a href="Impasses da democratização da comunicação.html" target="_blank">Leia mais sobre essa reportagem →</a></strong></p>
+                </div>
+            </section>
+
+            <section id="radios" class="content-section">
+                <h2>Rádios Comunitárias</h2>
+                <p>Muitas vezes esquecidas pela grande mídia, as rádios comunitárias seguem firmes como importantes ferramentas de democratização da comunicação. Sem fins lucrativos e com alcance restrito, geralmente limitado a um raio de até um quilômetros, essas emissoras têm uma missão clara: dar visibilidade à comunidade. </p>
+                <ul class="report-list">
+                    <li><a href="Serra verde.html" target="_blank"><div>Serra Verde FM: a força da comunicação comunitária em Xerém<span>Por Emily Vascurado e Ana Carolina Linhares</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Rádio Comunitária de Paracambi.html" target="_blank"><div>Rádio Comunitária de Paracambi - Sintonize a Resistência<span>Por Ana Cezário</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Rádio Saara.html" target="_blank"><div>Rádio Saara - Um quintal de possibilidades<span>Por Clara Reis</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Rádio Nova Onda FM.html" target="_blank"><div>Rádio Nova Onda FM: comunicação comunitária e voz ativa em Itaguaí<span>Por Agatha Monteiro</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Rádios universitarias.html" target="_blank"><div>A internet dos que não têm computador - Rádios Universitárias e o acesso livre à informação<span>Por Evelyn de Souza Santos</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+
+            <section id="desertos" class="content-section">
+                <h2>Desertos de Notícias</h2>
+                  <ul class="report-list">
+                    <li><a href="Atlas.html" target="_blank"><div>Mapeando o Silêncio: os Caminhos do Atlas da Notícia no Combate aos Desertos Informativos<span>Por Yasmin Souza</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Desiquilibrio de lugares.html" target="_blank"><div>O Rio que some e o Rio que assusta: como a mídia decide quem aparece no noticiário<span>Por Yasmin Souza</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+            
+            <section id="Outras experiências" class="content-section">
+                <h2>Outras experiências</h2>
+                 <ul class="report-list">
+                    <li><a href="Entre o mangue e as manchetes.html" target="_blank"><div>Entre o mangue e as manchetes - Como o jornal “O Cidadão” nasceu para contar a história da Maré de dentro para fora e construiu uma identidade no processo<span>Por João Victor Barros e Maria Clara Vinhaes</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Fala Roça.html" target="_blank"><div>Fala Roça: amplificando as vozes da favela<span>Por Leandra Fernandes</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Morro Azul.html" target="_blank"><div>A luta de uma associação recente pela melhoria do bairro de Morro Azul em Eng. Paulo de Frontin<span>Por Luan Cezário</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Três Rios.html" target="_blank"><div>Morador reativa associação e mobiliza comunidade em Três Rios<span>Por Gabriel de Lima</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="As vozes das Comunidades.html" target="_blank"><div>As vozes das comunidades - Como páginas de notícias informais transformam a comunicação em cidades e bairros periféricos<span>Por Rita Martins</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Dados da Favela.html" target="_blank"><div>Dados da favela, por quem vive nela: A narrativa reescrita pela própria comunidade<span>Por Alan Sena</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="O Rio de Janeiro não escuta somente português.html" target="_blank"><div>O Rio de Janeiro não escuta somente o português<span>Por Ana Luiza Teixeira</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Extremismo em redes.html" target="_blank"><div>Extremismo em rede - crimes, radicalização e ataques à democracia no Brasil<span>Por Gabriel Marques</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+            
+            <section id="perfis" class="content-section">
+                <h2>Perfis</h2>
+                     <ul class="report-list">
+                    <li><a href="Ismael Lopes e a Rádio Novos Rumos.html" target="_blank"><div>Ismael Lopes e a rádio Novos Rumos, a primeira rádio comunitária do Brasil<span>Por Beatriz Jansen</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Dubes Sônego Jr.html" target="_blank"><div>Dubes Sônego Jr.: o jornalista que ajudou o Brasil a enxergar seus desertos de notícia<span>Por Eduardo Mendes</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Zé do Caroço.html" target="_blank"><div>Zé do Caroço: a voz que fez o morro ouvir e ser ouvido<span>Por Agatha Monteiro</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+
+            <section id="legislacao" class="content-section">
+                <h2>Legislação da Mídia</h2>
+                  <ul class="report-list">
+                    <li><a href="A História da Legislação.html" target="_blank"><div>Uma história da legislação das comunicações no Brasil<span>Por Maria Fernanda Sueth</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+
+            <section id="marco-civil" class="content-section">
+                <h2>O Marco Civil da Internet</h2>
+                   <ul class="report-list">
+                    <li><a href="O Marco Civil da Internet.html" target="_blank"><div>Marco Civil da Internet: 10 anos depois, um marco ainda em disputa<span>Por Isabel Maia</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+            
+            <section id="Associação de Radiodifusão Comunitária" class="content-section">
+                <h2>Associação de Radiodifusão Comunitária</h2>
+                 <ul class="report-list">
+                    <li><a href="Abraço e a Força.html" target="_blank"><div>Abraço e a Força da Comunicação Popular<span>Por Danielle dos Santos</span></div><div class="arrow">→</div></a></li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer class="site-footer">
+            <p><strong>Sobre nós:</strong></p>
+            <p>A reportagem “A Luta pela Democratização da Comunicação” é uma produção da disciplina Técnica de Reportagem II – curso de Jornalismo da UFRRJ.</p>
+            <p><strong>Participantes:</strong></p>
+            <p>Agatha Monteiro, Alan Sena, Ana Beatriz Almeida, Ana Carolina Linhares, Ana Clara Cezario, Ana Luiza Teixeira, Beatriz Jansen, Clara Alvim, Danielle dos Santos, Eduardo Mendes, Emily Vascurado, Evelyn Santos, Gabriel de Lima, Gabriel Marques, Isabel Maia, João Victor Barros, José Roberto de Souza, Leandra Fernandes Silva, Luan Gomes Cezario, Maria Clara Vinhaes Barbosa, Maria Fernanda Sueth, Rita Borges Pereira e Yasmin Barbosa de Souza.</p>
+            <p><strong>Supervisão:</strong></p>
+            <p>Profa. Sandra Garcia e Cecília Figueiredo</p>
+            <p><strong>Desenvolvimento do site:</strong></p>
+            <p>Fernanda Carvalho Dias</p>
+        </footer>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.side-nav .nav-links a');
+        const sections = document.querySelectorAll('.main-content .content-section');
+        const sideNav = document.getElementById('side-nav');
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const accordionHeaders = document.querySelectorAll('.content-section > h2');
+        const contentWrapper = document.getElementById('content-wrapper');
+        const closeBtn = document.getElementById('close-btn');
+
+        function openNav() {
+            sideNav.classList.add('active');
+            contentWrapper.classList.add('menu-active');
+            hamburgerMenu.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeNav() {
+            sideNav.classList.remove('active');
+            contentWrapper.classList.remove('menu-active');
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+        }
+
+        if (hamburgerMenu && sideNav) {
+            hamburgerMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (sideNav.classList.contains('active')) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            });
+        }
+        
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeNav);
+        }
+
+        if (contentWrapper) {
+            contentWrapper.addEventListener('click', function() {
+                if (sideNav.classList.contains('active')) {
+                    closeNav();
+                }
+            });
+        }
+        
+        accordionHeaders.forEach(header => {
+            const section = header.parentElement;
+            const reportList = section.querySelector('.report-list');
+
+            if (section.id === 'radios') {
+                 section.classList.add('expanded');
+            }
+
+            if (reportList && reportList.children.length > 0) {
+                header.addEventListener('click', function() {
+                    section.classList.toggle('expanded');
+                });
+            } else {
+                header.style.cursor = 'default';
+                header.classList.add('no-expand');
+            }
+        });
+
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = ".content-section > h2.no-expand::after { display: none !important; }";
+        document.head.appendChild(styleSheet);
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('nav-active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: "-30% 0px -70% 0px" });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    if (!targetSection.classList.contains('expanded') && targetSection.id !== 'visao-geral') {
+                        targetSection.classList.add('expanded');
+                    }
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+
+                if (sideNav.classList.contains('active')) {
+                    closeNav();
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
