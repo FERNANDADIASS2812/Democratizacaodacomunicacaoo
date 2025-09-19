@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A história da legislação das comunicações no Brasil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-fundo: #f8f9fa;
+            --cor-branco: #ffffff;
+            --cor-borda: #e9ecef;
+            --cor-texto-principal: #212529;
+            --cor-texto-secundario: #6c757d;
+            --cor-timeline: #cbd5e1;
+            --cor-timeline-ponto: #334155;
+            --cor-link-ativo: #0a3d62;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .page-wrapper {
+            display: flex;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+    
+        .side-menu {
+            width: 220px;
+            flex-shrink: 0;
+            padding: 150px 20px 0 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            text-align: right;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .side-menu li {
+            margin-bottom: 15px;
+        }
+
+        .side-menu a {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--cor-texto-secundario);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            position: relative;
+            padding-right: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .side-menu a:hover {
+            color: var(--cor-link-ativo);
+        }
+
+        .side-menu a.active-link {
+            color: var(--cor-link-ativo);
+        }
+
+        .side-menu a::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            background-color: var(--cor-link-ativo);
+            border-radius: 50%;
+            transform: translateY(-50%) scale(0);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .side-menu a.active-link::after {
+            transform: translateY(-50%) scale(1);
+        }
+        /* ======================================= */
+
+        .timeline-column {
+            width: 60px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 2px;
+            height: 100%;
+            background-image: linear-gradient(var(--cor-timeline) 40%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 2px 10px;
+            background-repeat: repeat-y;
+            z-index: 1;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 30px;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: var(--cor-timeline-ponto);
+            border-radius: 50%;
+            z-index: 3;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            left: 30px;
+            height: 2px;
+            background-image: linear-gradient(to right, var(--cor-timeline) 40%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 10px 2px;
+            background-repeat: repeat-x;
+            z-index: 2;
+        }
+
+        .reportagem-container {
+            width: 100%;
+            flex-grow: 1;
+            margin: 50px 40px 50px 40px;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: relative; /* Adicionado para ser o contexto das notas */
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8em;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .reportagem-imagem-destaque {
+            margin: 20px 0 40px 0;
+        }
+
+        .reportagem-imagem-destaque img {
+            max-width: 50%;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+
+        .reportagem-conteudo h2 {
+            font-family: 'Merriweather', serif;
+            margin-top: 60px;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.8em;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+
+        .reportagem-conteudo h2:first-of-type {
+            margin-top: 40px;
+        }
+
+        .pull-quote {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4em;
+            font-style: italic;
+            text-align: center;
+            margin: 50px auto;
+            padding: 10px 20px;
+            max-width: 700px;
+            border-left: 4px solid var(--cor-borda);
+            border-right: 4px solid var(--cor-borda);
+        }
+
+        .pull-quote cite {
+            display: block;
+            font-size: 0.7em;
+            font-weight: bold;
+            margin-top: 15px;
+            font-style: normal;
+            color: var(--cor-texto-secundario);
+        }
+
+        .info-box {
+            background-color: #f1f3f5;
+            border-left: 4px solid #ced4da;
+            margin: 30px 0;
+            padding: 20px;
+            font-size: 0.95em;
+        } 
+
+        @media (max-width: 1200px) {
+            .timeline-column, .side-menu {
+                display: none;
+            }
+            .reportagem-container {
+                margin: 20px;
+                padding: 25px;
+            }
+        }
+
+        /* --- ESTILOS PARA NOTAS INTERATIVAS (POPOVERS) --- */
+        .nota-link {
+            text-decoration: none;
+        }
+
+        .nota-simbolo {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 14px;
+            font-family: serif;
+            font-style: italic;
+            font-weight: bold;
+            background-color: var(--cor-texto-secundario);
+            color: var(--cor-branco);
+            vertical-align: super;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .nota-link:hover .nota-simbolo {
+            background-color: var(--cor-link-ativo);
+        }
+
+        .nota-popover {
+            display: none; /* Começa escondido */
+            position: absolute; /* Permite flutuar sobre o texto */
+            z-index: 100; /* Garante que fique na frente de outros elementos */
+            max-width: 320px;
+            padding: 15px;
+            background-color: #f1f3f5;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(90, 13, 43, 0.15);
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: var(--cor-texto-principal);
+        }
+        /* --- FIM DOS ESTILOS DAS NOTAS --- */
+
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <nav class="side-menu">
+            <ul>
+                <li><a href="#seculos-xix-xx">Séculos XIX e XX</a></li>
+                <li><a href="#fhc-privatizacao">FHC e a Privatização</a></li>
+                <li><a href="#dias-atuais">Dias Atuais</a></li>
+            </ul>
+        </nav>
+
+        <div class="timeline-column">
+            <div class="timeline-line"></div>
+        </div>
+    
+        <main class="reportagem-container">
+            <header>
+                <h1 class="reportagem-titulo">A história da legislação das comunicações no Brasil</h1>
+                <div class="reportagem-meta">
+                    <span>Por: Maria Fernanda Sueth</span> | 
+                </div>
+            </header>
+
+            <article class="reportagem-conteudo">
+                
+                <h2 id="seculos-xix-xx">Século XIX</h2>
+                <div>
+                    <p>Antes de existir uma legislação que organizasse amplamente os sistemas de comunicação no país, as normas eram fragmentadas, descentralizadas e limitadas.</p>
+                    <p>As comunicações por meio dos telégrafos estavam sob a responsabilidade de diferentes órgãos públicos, como o Ministério da Justiça e o Ministério da Agricultura, Comércio e Obras Públicas.</p>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Telegrafistas da Empresa de Correios e Telégrafos (ECT) em 1934 Arquivo Nacional (1).jpg" alt="Telegrafistas da Empresa de Correios e Telégrafos (ECT) em 1934.">
+                        <figcaption>Telegrafistas da Empresa de Correios e Telégrafos (ECT) em 1934. Fonte: Arquivo Nacional</figcaption>
+                    </figure>
+                    <p>Em 1881, as linhas telefônicas e telegráficas passaram a ser propriedade exclusiva do Governo Imperial, que então detinha o controle total sobre essas redes e decidia a quem conceder seu direito de exploração.</p>
+                </div>
+
+                <h2>Século XX</h2>
+                <div>
+                    <p>As primeiras tentativas de regulamentações legais das comunicações surgiram apenas na década de 1930, cerca de 70 anos após a instalação da primeira linha de telégrafo elétrico no país, e 50 anos após a instalação da primeira linha telefônica pública. Até então, não havia um marco regulatório unificado que tratasse das comunicações de forma integrada.</p>
+                    
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Menina falando ao telefone público, agosto de 1972.  - Arquivo Nacional (1).jpeg" alt="Menina falando ao telefone público, agosto de 1972.">
+                        <figcaption>Menina falando ao telefone público, agosto de 1972. Fonte: Arquivo Nacional</figcaption>
+                    </figure>
+
+                    <p>Os primeiros esforços na década de 30 sucederam por conta de um contexto de avanços tecnológicos crescentes, e ganharam forma nos decretos nº 20.047, de 1931 <sup><a href="#nota1" class="nota-link"><span class="nota-simbolo">+</span></a></sup> e nº 21.111, de 1932<sup><a href="#nota2" class="nota-link"><span class="nota-simbolo">+</span></a></sup>. Ambos abrangiam tecnologias como a radiotelegrafia (troca de mensagens em códigos, como, por exemplo, o código Morse), a radiotelefonia (áudios transmitidos por ondas de rádios), e qualquer uso de radiofrequências.</p>
+
+                      <p>Até ser aprovado, em 1962, o Código Brasileiro de Telecomunicações, o Brasil se guiava por essas normas fragmentadas. Apenas 30 anos depois, surge o CBT, e com ele o Governo tinha uma ferramenta única para regulamentar quem poderia operar as redes e sistemas e quais limites deveriam ser respeitados. O contexto de aprovação do Código é sobretudo político.</p>
+                    <p>Em 1961, pouco após a posse do então Presidente da República Jânio Quadros, as poucas normas efetivas até ali permitiam que o Presidente aplicasse punições aos meios de radiodifusão. Ele então suspende a Rádio Jornal do Brasil de suas transmissões por dois dias, após se sentir descontente com o teor de um programa.</p>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Rádio Nacional - PRE-8 - Praça Mauá  (1).jpg" alt="Rádio Nacional, Praça Mauá.">
+                        <figcaption>Rádio Nacional, Praça Mauá. Fonte: Walter Silva / Acervo Instituto Moreira Salles</figcaption>
+                    </figure>
+                    <p>Os setores de radiodifusão e telecomunicações levaram ao Congresso um projeto de lei, e assim no dia 27 de agosto de 1962 foi sancionada a lei 4.117 - Código Brasileiro de Telecomunicações (CBT)</p>
+                    <p>1963 - Decreto nº 52.795 é publicado, costurando o CBT. O decreto detalha como os serviços de radiodifusão devem ser organizados, operados e fiscalizados, reforça seu papel educativo, define critérios específicos para a concessão de canais e estabelece o CONTEL (Conselho Nacional de Telecomunicações) como o órgão responsável pela fiscalização do setor.</p>
+                    <p>Em 1967, poucos anos depois, já sob o regime militar, surge o Decreto-Lei 236/1967, que endurece o controle sobre o setor das comunicações. Na prática, o decreto fortaleceu o aparato estatal de regulação, censura e repressão, sobretudo ao definir claramente o que seria considerado abuso da liberdade de radiodifusão e outras condutas inaceitáveis para o Estado.</p>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Em 1968 ocorreu o maior contingente em manifestações públicas até então na Ditadura- 100 mil pessoas tomaram as ruas do Rio de Janeiro  (1).webp" alt="Passeata dos Cem Mil no Rio de Janeiro em 1968">
+                        <figcaption>Em 1968 ocorreu o maior contingente em manifestações públicas até então na Ditadura: 100 mil pessoas tomaram as ruas do Rio de Janeiro. Fonte: Arquivo Nacional/Correio da Manhã</figcaption>
+                    </figure>
+                    <p>Ambos ainda seguem vigentes, mesmo que de forma parcial, com diversos artigos revogados, de forma implícita ou através de outros decretos, ou simplesmente se tornaram incompatíveis com a posterior Constituição de 1988.</p>
+                    <p>O Código Brasileiro de Telecomunicações ainda é a principal referência legal de um guia unificado da legislação das comunicações. Sendo de 1962, ou seja, pré-ditadura, pré-internet, e prévio até a Constituição de 1988, ele passou por mudanças estruturais, trechos revogados, artigos substituídos e redações refeitas. Em 1988, com a promulgação da Constituição Federal Brasileira, os serviços de radiodifusão foram estabelecidos como públicos. Novos movimentos acerca da legislação das comunicações no país passaram a se organizar novamente no início da década de 90.</p>
+                </div>
+
+                <h2 id="fhc-privatizacao">FHC, privatização e a Telebrás</h2>
+                <div>
+                    <p>Apesar dos esforços do então presidente Fernando Collor de Mello, com o Programa Nacional de Desestatização (PND), desde a sua posse, o setor de telecomunicações ficou fora do plano. A avaliação do governo à época era de que não havia apoio político o suficiente para romper com o monopólio estatal, o que se concretiza mais à frente com sucessivas oposições tanto do movimento esquerdista quanto da direita.</p>
+                    <p>Apenas com a eleição de Fernando Henrique Cardoso em 1994, o tema retomou força. No seu programa de governo, “Mãos à obra”, ele defendia o estímulo de investimento privado no setor de telecomunicações, destacando a necessidade de “reforçar a presença do Estado como ente regulador da atividade de telecomunicações” e “preservar a presença do setor público nas áreas estratégicas das comunicações e no desenvolvimento tecnológico”.</p>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Capa da proposta de governo _Mãos à obra_, de FHC, publicado em 1994.jpg" alt="Capa da proposta de governo 'Mãos à obra, Brasil' de Fernando Henrique Cardoso, publicada em 1994.">
+                        <figcaption>Capa da proposta de governo "Mãos à obra, Brasil" de Fernando Henrique Cardoso, publicada em 1994.</figcaption>
+                    </figure>
+                    <p>Em fevereiro de 1995, encaminhou ao Congresso Nacional a Proposta de Emenda à Constituição (PEC) n.º 3, que modificava o artigo 21, e retirava o veto à concessão de serviços de telecomunicações à iniciativa privada.</p>
+                    <p>A PEC foi aprovada no mesmo ano, e a emenda constitucional não definia ainda organizações e regras, o que veio apenas através de duas leis complementares:</p>
+                    <div class="info-box">Lei Mínima das Telecomunicações (1996): regulamentou a entrada do capital privado em serviços modernos como a telefonia celular, transmissão de dados, serviços via satélite e os chamados serviços de valor adicionado.</div>
+                    <div class="info-box">Lei Geral das Telecomunicações (1997): reestruturou completamente o setor, organizando o mercado, as regras de concessão e viabilizando a privatização do Sistema Telebrás, até então estatal.</div>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Discurso sobre o projeto da Lei Geral das Telecomunicações (LGT), Brasília (DF), 5 mar. 1997; foto- Daniela Bizerra. (1).jpg" alt="Sérgio Motta discursando sobre a LGT">
+                        <figcaption>Discurso de Sérgio Motta sobre o projeto da Lei Geral das Telecomunicações (LGT), Brasília (DF), 5 mar. 1997. Foto: Elaine Bezerra</figcaption>
+                    </figure>
+                    <p>Como esperado pelo ex-presidente Collor, o processo encontrou uma forte resistência política. Partidos de esquerda, especialmente o Partido dos Trabalhadores (PT), e sindicatos ligados à Central Única dos Trabalhadores (CUT), reagiram. O então presidente do PT, José Dirceu, criticou publicamente a fragmentação da Telebrás, e defendia que ela se mantivesse como uma empresa unificada e estatal.</p>
+                    <p>Após o leilão, o PT chegou a coletar assinaturas a favor de uma Comissão Parlamentar de Inquérito (CPI) junto a outros partidos de oposição, para investigar denúncias de favorecimento e direcionamento na venda, mas a iniciativa não foi adiante.</p>
+                    <blockquote class="pull-quote">
+                        “Das 12 empresas, 4 foram arrematadas por consórcios de capital externo. Em outras 6, houve associação entre capital nacional e estrangeiro. Somente 2 telefônicas foram arrematadas por grupos exclusivamente nacionais (...) As ruas do centro do Rio, onde está localizada a Bolsa de Valores, transformou-se em uma praça de guerra entre 3.000 policiais e milhares de manifestantes contrários à privatização. Pelos menos 30 pessoas foram presas, dezenas ficaram feridas e o comércio foi obrigado a fechar as portas durante quase todo o dia. O presidente Fernando Henrique Cardoso considerou o leilão um sucesso e disse que parte do dinheiro será destinado a programas na área social”
+                        <cite>– Folha de S. Paulo, 30 de julho de 1998</cite>
+                    </blockquote>
+                </div>
+
+                <h2 id="dias-atuais">Século XXI</h2>
+                <div>
+                    <p>Hoje, a telefonia e a transmissão de dados são regulamentados pela LGT, e o CBT cuida da radiodifusão. A Lei Geral das Telecomunicações substituiu o Código Brasileiro de Telecomunicações no que se refere à telefonia e aos serviços de transmissão de dados, e o CBT permanece regulamentando a radiodifusão. Na prática, a LGT abre o setor das telecomunicações à concorrência e iniciativas privadas, separa a televisão e o rádio dos serviços de telefonia (móvel e fixa), internet e dados, e institui a Agência Nacional de Telecomunicações. A ANATEL chega para regular, fiscalizar e garantir qualidade e universalização dos serviços. Essa lei é a base legal que regula até hoje os serviços de telecomunicações no Brasil.</p>
+                    <p>Diferente do que muitos imaginam, as televisões e as rádios não são empresas privadas livres para agir somente conforme seus interesses. As TVs e rádios são concedidas pelo Estado, e isso significa que, na prática, são empresas como as de transporte e a de energia, e têm concessões para operar em determinados períodos. A Constituição Federal de 1988 reforça que cabe à União, diretamente ou mediante concessão, explorar os serviços de radiodifusão, sonora e/ou televisiva. Na prática, o empresário que consegue uma concessão e opera uma emissora não é o proprietário do serviço, mas sim um gestor autorizado a explorá-lo por um tempo limitado, que normalmente são 10 anos para rádios e 15 anos para TVs.</p>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/congresso.jpeg" alt="Congresso aprova texto final da Constituição na sessão de 22/09/1988.">
+                        <figcaption>Congresso aprova texto final da Constituição na sessão de 22/09/1988. Fonte: Josemar Gonçalves</figcaption>
+                    </figure>
+                    <blockquote class="pull-quote">
+                        “Vencidas as concessões, elas devem ser renovadas pelo Executivo com a aprovação do Legislativo. A Constituição determina que o Congresso Nacional terá 45 dias para apreciar os atos de outorga, mas a burocracia e o trâmite por vários órgãos do poder público costumam atrasar essa análise em anos. Especialistas e o movimento social criticam o fato de a renovação ser praticamente automática e pedem mais rigor nesse processo.”
+                        <cite>— Reportagem Especial Rádio Câmara</cite>
+                    </blockquote>
+                </div>
+                
+                <h2>Uma legislação ainda analógica para um mundo digital</h2>
+                <div>
+                    <p>Enquanto os canais de TV aberta estão submetidos a obrigações legais como o cumprimento de percentuais de programação local ou educativa, plataformas de streaming e redes sociais operam à margem dessas exigências, embora exerçam funções semelhantes ou até mais impactantes no consumo de conteúdo.</p>
+                    <p>Dois projetos em tramitação no Congresso refletem a tentativa de adequar o marco legal ao contexto contemporâneo das comunicações:</p>
+                    <div class="info-box">O PL 6106/2023, já aprovado pelo Senado, propõe revogar parte do Decreto‑Lei 236/1967 para permitir a criação de redes e associações entre concessionárias e permissionárias de rádio e televisão. Segundo o senador Esperidião Amin (PP‑SC), que propôs a PL, a proibição atual não se justifica numa era em que plataformas digitais, streaming e redes sociais oferecem pluralidade e liberdade de escolha ao público. O projeto segue agora para análise na Câmara, onde tramita com prioridade nas comissões de Comunicação e de Constituição e Justiça.</div>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Geraldo Magela_Agência Senado    Fonte- Agência Senado (2).jpeg" alt="Senador Esperidião Amin">
+                        <figcaption>“Para o autor do projeto, Espiridião Amin, a Constituição já é suficiente ao vedar monopólio de emissoras...”</figcaption>
+                    </figure>
+                    <div class="info-box">Apresentado pela senadora Teresa Leitão (PT‑PE) em agosto de 2023, o PL 3757/2023 altera a Lei nº 13.116/2015 para obrigar o compartilhamento gratuito de infraestrutura de telecomunicações, como torres e enlaces, para emissoras educativas vinculadas a instituições públicas. A proposta já foi aprovada pelas comissões de Educação e Cultura, e de Serviços de Infraestrutura, recebendo voto favorável do relator Efraim Filho (União Brasil‑PB).</div>
+                    <figure class="reportagem-imagem-destaque">
+                        <img src="assets/img/Teresa Leitão- a radiodifusão é uma atividade sem caráter comercial que favorece o acesso de todos os brasileiros à educação Pedro FrançaAgência Senado    Fonte- Agência Senado.jpg" alt="Senadora Teresa Leitão">
+                        <figcaption>“Teresa Leitão: a radiodifusão é uma atividade sem caráter comercial...”</figcaption>
+                    </figure>
+                </div>
+
+                <div class="nota-popover" id="nota1">
+                    <b>Decreto nº 20.047, de 1931:</b> Estabelece as bases para a execução dos serviços de radiocomunicações no território nacional.
+                </div>
+                <div class="nota-popover" id="nota2">
+                    <b>Decreto nº 21.111, de 1932:</b> Detalha a sua organização por meio de critérios técnicos para o funcionamento, concessão e fiscalização.
+                </div>
+
+            </article>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageWrapper = document.querySelector('.page-wrapper');
+            const timelineColumn = document.querySelector('.timeline-column');
+            const allH2s = document.querySelectorAll('.reportagem-conteudo > h2');
+            const menuLinks = document.querySelectorAll('.side-menu a');
+            const sectionsWithId = document.querySelectorAll('.reportagem-conteudo h2[id]');
+
+            // Função para desenhar a linha do tempo e seus conectores
+            function setupTimeline() {
+                if (!timelineColumn || window.innerWidth <= 1200) return;
+
+                timelineColumn.innerHTML = '<div class="timeline-line"></div>';
+
+                allH2s.forEach(h2 => {
+                    const dot = document.createElement('div');
+                    dot.className = 'timeline-dot';
+                    
+                    const connector = document.createElement('div');
+                    connector.className = 'timeline-connector';
+
+                    const h2Top = h2.getBoundingClientRect().top - pageWrapper.getBoundingClientRect().top;
+                    const verticalCenter = h2Top + (h2.offsetHeight / 2);
+
+                    dot.style.top = `${verticalCenter - 8}px`;
+                    
+                    connector.style.top = `${verticalCenter - 1}px`;
+                    connector.style.width = '30px';
+
+                    timelineColumn.appendChild(dot);
+                    timelineColumn.appendChild(connector);
+                });
+            }
+
+            // Função para o 'scroll-spy' que destaca o link ativo no menu
+            function setupScrollSpy() {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-40% 0px -60% 0px',
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            
+                            menuLinks.forEach(link => link.classList.remove('active-link'));
+                            
+                            const activeLink = document.querySelector(`.side-menu a[href="#${id}"]`);
+                            if (activeLink) {
+                                activeLink.classList.add('active-link');
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                sectionsWithId.forEach(section => {
+                    observer.observe(section);
+                });
+            }
+
+            // --- LÓGICA PARA NOTAS INTERATIVAS (POPOVERS) ---
+            function setupPopovers() {
+                const container = document.querySelector('.reportagem-container');
+                if (!container) return;
+
+                const notaLinks = document.querySelectorAll('a.nota-link');
+                let openNoteBox = null;
+
+                // Função para fechar a nota que estiver aberta
+                const closeOpenNote = () => {
+                    if (openNoteBox) {
+                        openNoteBox.style.display = 'none';
+                        openNoteBox = null;
+                    }
+                };
+
+                // Adiciona o evento de clique a cada link de nota
+                notaLinks.forEach(link => {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        const anchor = link.parentElement;
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetBox = document.getElementById(targetId);
+
+                        if (!targetBox) return;
+
+                        const isSameBox = openNoteBox === targetBox;
+                        closeOpenNote();
+
+                        if (isSameBox) {
+                            return; // Se for a mesma caixa, apenas fecha (já feito)
+                        }
+                        
+                        openNoteBox = targetBox;
+
+                        const containerRect = container.getBoundingClientRect();
+                        const anchorRect = anchor.getBoundingClientRect();
+                        
+                        // Posiciona a nota e a exibe para medir suas dimensões
+                        const top = (anchor.offsetTop - container.scrollTop) + 25;
+                        let left = anchor.offsetLeft;
+                        
+                        targetBox.style.top = `${top}px`;
+                        targetBox.style.left = `${left}px`;
+                        targetBox.style.display = 'block';
+
+                        const boxRect = targetBox.getBoundingClientRect();
+                        
+                        // Centraliza a nota abaixo do ícone
+                        left = left + (anchorRect.width / 2) - (boxRect.width / 2);
+
+                        // Ajusta se sair pelos lados do container
+                        if (left < 10) {
+                            left = 10;
+                        } else if (left + boxRect.width > container.clientWidth - 10) {
+                            left = container.clientWidth - boxRect.width - 10;
+                        }
+
+                        // Aplica a posição final
+                        targetBox.style.left = `${left}px`;
+                    });
+                });
+
+                // Adiciona um listener para fechar a nota ao clicar fora
+                document.addEventListener('click', function(event) {
+                    if (openNoteBox && !openNoteBox.contains(event.target) && !event.target.closest('a.nota-link')) {
+                        closeOpenNote();
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA DAS NOTAS ---
+
+            // Inicializa todas as funcionalidades
+            setupTimeline();
+            setupScrollSpy();
+            setupPopovers(); // <-- Adicionado aqui
+
+            window.addEventListener('resize', setupTimeline);
+        });
+    </script>
+
+</body>
+</html>
