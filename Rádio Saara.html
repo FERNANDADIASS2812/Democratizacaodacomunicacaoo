@@ -75,7 +75,7 @@
         }
         
         .reportagem-imagem-destaque img {
-            max-width: 50%;
+            max-width: 70%;
             height: auto;
             display: block;
             margin-left: auto;
@@ -120,7 +120,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 600%; 
+    max-width: 300%; 
     margin-top: 40px; 
     margin-bottom: 40px; /* Espaçamento opcional */
     border-radius: 8px; /* Estética opcional, para combinar com as imagens */
@@ -136,22 +136,11 @@
 
        
 .audio-container {
-    display: flex;
-    justify-content: space-evenly; /* Centraliza o player horizontalmente */
+    display: flex;              /* Ativa o modo Flexbox para alinhamento */
+    justify-content: space-evenly;    /* Centraliza o item filho (o <audio>) horizontalmente */
+    
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-/* Estilos para o player de áudio */
-audio {
-    width: 50%; 
-    max-width: 500px; 
-    height: 50px; 
-
-  
-    border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(49, 49, 108, 0.1);
-    outline: none; 
 }
 
 
