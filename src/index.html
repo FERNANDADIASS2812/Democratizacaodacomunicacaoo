@@ -157,7 +157,8 @@
             border-bottom: 1px solid var(--cor-borda);
             padding: 200px 40px; 
             color: var(--cor-branco);
-            background-image: url("img/WhatsApp Image 2025-07-17 at 8.19.48 AM.jpg");
+            /* A linha abaixo foi alterada para a nova imagem de fundo */
+            background-image: url("src/assets/img/Deserto de notícias.jpg");
             background-size: 100% auto; 
             background-position: center bottom; 
             background-repeat: no-repeat;
@@ -177,7 +178,7 @@
             z-index: 1;
         }
 
-        /* Garante que o texto fique acima do overlay */
+        
         .hero-text {
             position: relative;
             z-index: 2;
@@ -190,7 +191,7 @@
             color: var(--cor-branco);
             text-transform: uppercase;
             line-height: 1.1;
-            margin: 0; /* <<< MUDANÇA PRINCIPAL: Removido o 'auto' para não centralizar */
+            margin: 0; 
             max-width: 800px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
@@ -362,7 +363,7 @@
             .hero-text h1 { font-size: 2.8em; }
         }
 
-         @media (max-width: 480px) {
+        @media (max-width: 480px) {
             .hero-text h1 { font-size: 2.2em; }
         }
     </style>
@@ -381,7 +382,7 @@
             <li><a href="#perfis">Perfis</a></li>
             <li><a href="#legislacao">Legislação</a></li>
             <li><a href="#marco-civil">Marco Civil</a></li>
-            <li><a href="#Associação de Radiodifusão Comunitária">Associação de Radiodifusão Comunitária</a></li>
+         
         </ul>
     </nav>
 
@@ -404,27 +405,28 @@
 
             <section id="radios" class="content-section">
                 <h2>Rádios Comunitárias</h2>
-                <p>Muitas vezes esquecidas pela grande mídia, as rádios comunitárias seguem firmes como importantes ferramentas de democratização da comunicação. Sem fins lucrativos e com alcance restrito, geralmente limitado a um raio de até um quilômetros, essas emissoras têm uma missão clara: dar visibilidade à comunidade. </p>
+                <p>Muitas vezes esquecidas pela grande mídia, as rádios comunitárias seguem firmes como importantes ferramentas de democratização da comunicação. Sem fins lucrativos e com alcance restrito, geralmente limitado a um raio de até um quilômetro, essas emissoras têm uma missão clara: dar visibilidade à comunidade. </p>
                 <ul class="report-list">
                     <li><a href="Serra verde.html" target="_blank"><div>Serra Verde FM: a força da comunicação comunitária em Xerém<span>Por Emily Vascurado e Ana Carolina Linhares</span></div><div class="arrow">→</div></a></li>
                     <li><a href="Rádio Comunitária de Paracambi.html" target="_blank"><div>Rádio Comunitária de Paracambi - Sintonize a Resistência<span>Por Ana Cezário</span></div><div class="arrow">→</div></a></li>
                     <li><a href="Rádio Saara.html" target="_blank"><div>Rádio Saara - Um quintal de possibilidades<span>Por Clara Reis</span></div><div class="arrow">→</div></a></li>
                     <li><a href="Rádio Nova Onda FM.html" target="_blank"><div>Rádio Nova Onda FM: comunicação comunitária e voz ativa em Itaguaí<span>Por Agatha Monteiro</span></div><div class="arrow">→</div></a></li>
-                    <li><a href="Rádios universitarias.html" target="_blank"><div>A internet dos que não têm computador - Rádios Universitárias e o acesso livre à informação<span>Por Evelyn de Souza Santos</span></div><div class="arrow">→</div></a></li>
-                </ul>
-            </section>
+                    <li><a href="Rádios universitarias.html" target="_blank"><div>Rádios Universitárias e o acesso livre à informação<span>Por Evelyn de Souza Santos</span></div><div class="arrow">→</div></a></li>
+                     <li><a href="Abraço e a Força.html" target="_blank"><div>Abraço e a Força da Comunicação Popular<span>Por Danielle dos Santos</span></div><div class="arrow">→</div></a></li>
+                 </ul>  
+                 </section>
 
             <section id="desertos" class="content-section">
                 <h2>Desertos de Notícias</h2>
-                  <ul class="report-list">
+                    <ul class="report-list">
                     <li><a href="Atlas.html" target="_blank"><div>Mapeando o Silêncio: os Caminhos do Atlas da Notícia no Combate aos Desertos Informativos<span>Por Yasmin Souza</span></div><div class="arrow">→</div></a></li>
-                    <li><a href="Desiquilibrio de lugares.html" target="_blank"><div>O Rio que some e o Rio que assusta: como a mídia decide quem aparece no noticiário<span>Por Yasmin Souza</span></div><div class="arrow">→</div></a></li>
+                    <li><a href="Desequilibrio.html" target="_blank"><div>O Rio que some e o Rio que assusta: como a mídia decide quem aparece no noticiário<span>Por Yasmin Souza</span></div><div class="arrow">→</div></a></li>
                 </ul>
             </section>
             
             <section id="Outras experiências" class="content-section">
                 <h2>Outras experiências</h2>
-                 <ul class="report-list">
+                   <ul class="report-list">
                     <li><a href="Entre o mangue e as manchetes.html" target="_blank"><div>Entre o mangue e as manchetes - Como o jornal “O Cidadão” nasceu para contar a história da Maré de dentro para fora e construiu uma identidade no processo<span>Por João Victor Barros e Maria Clara Vinhaes</span></div><div class="arrow">→</div></a></li>
                     <li><a href="Fala Roça.html" target="_blank"><div>Fala Roça: amplificando as vozes da favela<span>Por Leandra Fernandes</span></div><div class="arrow">→</div></a></li>
                     <li><a href="Morro Azul.html" target="_blank"><div>A luta de uma associação recente pela melhoria do bairro de Morro Azul em Eng. Paulo de Frontin<span>Por Luan Cezário</span></div><div class="arrow">→</div></a></li>
@@ -447,33 +449,28 @@
 
             <section id="legislacao" class="content-section">
                 <h2>Legislação da Mídia</h2>
-                  <ul class="report-list">
+                    <ul class="report-list">
                     <li><a href="A História da Legislação.html" target="_blank"><div>Uma história da legislação das comunicações no Brasil<span>Por Maria Fernanda Sueth</span></div><div class="arrow">→</div></a></li>
                 </ul>
             </section>
 
             <section id="marco-civil" class="content-section">
                 <h2>O Marco Civil da Internet</h2>
-                   <ul class="report-list">
+                     <ul class="report-list">
                     <li><a href="O Marco Civil da Internet.html" target="_blank"><div>Marco Civil da Internet: 10 anos depois, um marco ainda em disputa<span>Por Isabel Maia</span></div><div class="arrow">→</div></a></li>
                 </ul>
             </section>
             
-            <section id="Associação de Radiodifusão Comunitária" class="content-section">
-                <h2>Associação de Radiodifusão Comunitária</h2>
-                 <ul class="report-list">
-                    <li><a href="Abraço e a Força.html" target="_blank"><div>Abraço e a Força da Comunicação Popular<span>Por Danielle dos Santos</span></div><div class="arrow">→</div></a></li>
-                </ul>
-            </section>
+           
         </main>
         
         <footer class="site-footer">
             <p><strong>Sobre nós:</strong></p>
-            <p>A reportagem “A Luta pela Democratização da Comunicação” é uma produção da disciplina Técnica de Reportagem II – curso de Jornalismo da UFRRJ.</p>
+            <p>A reportagem “A Luta pela Democratização da Comunicação” é uma produção da disciplina Técnica de Reportagem II, do curso de Jornalismo da UFRRJ.</p>
             <p><strong>Participantes:</strong></p>
             <p>Agatha Monteiro, Alan Sena, Ana Beatriz Almeida, Ana Carolina Linhares, Ana Clara Cezario, Ana Luiza Teixeira, Beatriz Jansen, Clara Alvim, Danielle dos Santos, Eduardo Mendes, Emily Vascurado, Evelyn Santos, Gabriel de Lima, Gabriel Marques, Isabel Maia, João Victor Barros, José Roberto de Souza, Leandra Fernandes Silva, Luan Gomes Cezario, Maria Clara Vinhaes Barbosa, Maria Fernanda Sueth, Rita Borges Pereira e Yasmin Barbosa de Souza.</p>
-            <p><strong>Supervisão:</strong></p>
-            <p>Profa. Sandra Garcia e Cecília Figueiredo</p>
+            <p><strong>Orientação :</strong></p>
+            <p>Profas. Sandra Garcia e Cecília Figueiredo</p>
             <p><strong>Desenvolvimento do site:</strong></p>
             <p>Fernanda Carvalho Dias</p>
         </footer>
