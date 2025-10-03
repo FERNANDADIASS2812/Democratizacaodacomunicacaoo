@@ -43,7 +43,7 @@
 
         .reportagem-titulo {
             font-family: 'Merriweather', serif;
-            font-size: 2.8em;
+            font-size: 2.0em;
             font-weight: 700;
             color: #1a1a1a;
             line-height: 1.2;
@@ -82,14 +82,8 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         
-        .reportagem-imagem-destaque figcaption {
-            font-size: 0.85em;
-            color: var(--cor-texto-secundario);
-            text-align: center;
-            margin-top: 15px;
-        }
-        .coluna-imagem {
-            max-width: 30%;
+       .reportagem-imagem-mare img {
+            max-width: 100%;
             height: auto;
             display: block;
             margin-left: auto;
@@ -97,6 +91,20 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+        
+        
+        .reportagem-imagem-destaque {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+        
 
         .reportagem-conteudo p {
             margin-bottom: 1.6em;
@@ -141,32 +149,6 @@
             border-left: 4px solid var(--cor-borda);
             border-right: 4px solid var(--cor-borda);
             position: relative;
-        }
-        
-        .layout-imagem-texto {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items:flex-start ;
-            margin: 40px 0;
-        }
-        .layout-imagem-texto .coluna-imagem {
-            flex: 1;
-            min-width: 300px;
-        }
-        .layout-imagem-texto .coluna-imagem img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 50px rgba(191, 63, 63, 0.1);
-        }
-        .layout-imagem-texto .coluna-imagem figcaption {
-            font-size: 0.85em;
-            color: var(--cor-texto-secundario);
-            margin-top: 10px;
-        }
-        .layout-imagem-texto .coluna-texto {
-            flex: 2;
-            min-width: 300px;
         }
         
         .info-box {
@@ -219,18 +201,17 @@
                 </figure>
                 
                 
-                <div class="layout-imagem-texto">
+                <div class="reportagem-imagem-mare">
                     <div class="coluna-imagem">
                         <figure>
                             <img src="assets/img/mare_dentro (1).jpg" alt="Mapa das Favelas da Maré.">
-                            <figcaption>Mapa das Favelas da Maré.<br><strong>Reprodução: MultiRio</strong></figcaption>
+                            
                         </figure>
                     </div>
-                    <div class="coluna-texto">
+                   
                         <p>Crescida na favela de Rubens Vaz, Maria é social media do DataLab, laboratório com objetivo de democratizar a informação por meio da geração, análise e divulgação de dados a partir do Complexo da Maré. A organização sem fins lucrativos é focada em raça, gênero e território e, por meio de seus projetos, busca formar cidadãos da própria comunidade, capazes de discutir pautas relevantes, produzir ciência de dentro para fora, cobrar políticas públicas e criar uma contra-narrativa para um território historicamente marginalizado.</p>
                         <p>Há mais de 100 anos, as favelas se consolidaram como espaços populares, desenvolvidos a partir da desigualdade social refletida nas formas de interação atualmente. Os cortiços, grandes casarões que abrigavam famílias de baixa renda no centro da cidade, foram demolidos a mando do prefeito da época, Pereira Passos, em uma tentativa higienista e eugenista de transformar o Rio de Janeiro em uma “Paris Tropical”. Essa ação marcou a transição dos cidadãos expulsos para áreas suburbanas mais afastadas do centro e deu início ao processo de formação desses espaços, atualmente chamados de favelas.</p>
-                    </div>
-                </div>
+                    
 
                 <figure class="reportagem-imagem-destaque">
                     <img src="assets/img/LCarioca_Malta_rua_da_carioca_1906_350 (1).jpg" alt="Obras de alargamento na rua da Carioca em 1910, que resultou na derrubada dos cortiços.">

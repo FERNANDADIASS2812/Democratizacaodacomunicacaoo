@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extremismo em Rede: Ataques à Democracia no Brasil</title>
+    
+    <style>
+        /* IMPORTAÇÃO DAS FONTES DO GOOGLE */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+        /* VARIÁVEIS DE COR */
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5e5e5;
+            --cor-destaque-fundo: #f9f9f9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reportagem-container {
+            position: relative; /* Essencial para o posicionamento das notas */
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-subtitulo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .reportagem-imagem-destaque {
+            margin: 40px 0;
+        }
+        
+        .reportagem-imagem-destaque img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+
+        .reportagem-conteudo h2 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #333;
+            font-size: 1.8em;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+
+        /* ESTILO PARA CITAÇÃO EM DESTAQUE (OLHO) */
+        .pull-quote {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4em;
+            font-style: italic;
+            text-align: center;
+            color: var(--cor-texto-secundario);
+            margin: 50px auto;
+            padding: 10px 20px;
+            max-width: 600px;
+            border-left: 4px solid var(--cor-borda);
+            border-right: 4px solid var(--cor-borda);
+        }
+        
+        /* ESTILO PARA BOX DE INFORMAÇÃO */
+        .info-box {
+            background-color: var(--cor-destaque-fundo);
+            border: 1px solid var(--cor-borda);
+            padding: 20px;
+            margin: 20px 0 40px 0; 
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-radius: 8px;
+        }
+        /* Ajustes para elementos dentro do info-box */
+        .info-box p,
+        .info-box ul,
+        .info-box figure {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .info-box figure {
+            margin: 20px auto; /* Centraliza figuras dentro do info-box */
+        }
+        .info-box figure img {
+            max-width: 50%; 
+            height: auto;
+            display: block; /* Para margin:auto funcionar */
+            margin: 0 auto;
+        }
+        .info-box ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        .info-box figcaption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
+        .info-box h3 { /* Estilo para o título das notas dentro do info-box */
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            margin-top: 0; /* Remove margem superior padrão do h3 */
+            margin-bottom: 15px;
+            color: var(--cor-texto-principal);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 5px;
+        }
+
+
+        /* ESTILO PARA LINKS DE NOTAS NO TEXTO */
+        .reportagem-conteudo sup a.nota-link {
+            text-decoration: none;
+            color: #636d78; /* Cor azul para os números das notas */
+            font-weight: bold;
+            cursor: pointer; /* Indica que é clicável */
+        }
+        .reportagem-conteudo sup a.nota-link:hover {
+            text-decoration: underline;
+        }
+        
+        /**************************************************/
+        /* NOVO ESTILO APENAS PARA O SÍMBOLO        */
+        /**************************************************/
+        .nota-simbolo {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 0.8em;
+            background-color: #565658;
+            color: #fff;
+            font-weight: bold;
+            vertical-align: super;
+            transition: background-color 0.2s;
+            text-decoration: none !important;
+        }
+        a.nota-link:hover .nota-simbolo {
+            background-color: #403e45;
+            text-decoration: none !important;
+        }
+        /**************************************************/
+
+
+        /* ESTILO PARA OS BOXES DE NOTA COMO POPOVER */
+        .nota-box-interativo {
+            display: none; 
+            position: absolute; /* Permite posicionamento flutuante */
+            z-index: 100; /* Garante que a nota fique sobre o texto */
+            max-width: 350px; 
+            margin: 0; /* Remove a margem padrão de .info-box */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+            /* Herda os outros estilos de .info-box (background, padding, etc) */
+            background-color: var(--cor-destaque-fundo);
+            border: 1px solid var(--cor-borda);
+            padding: 15px;
+            border-radius: 8px;
+            color: var(--cor-texto-secundario);
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="reportagem-container">
+            
+            <header>
+                <h1 class="reportagem-titulo">Extremismo em rede: crimes, radicalização e ataques à democracia no Brasil
+</h1>
+                <p class="reportagem-subtitulo"> Planejamento de atentados terroristas, aliciamento de menores, estupros virtuais, armazenamento de pornografia infantil. Esses são alguns dos crimes cometidos por usuários da plataforma Discord. Com perfis de crianças e jovens que vão de 14 até 20 anos, a juventude no Brasil e no mundo está sendo vítima e cometendo crimes hediondos pelo mundo virtual.
+</p>
+                <div class="reportagem-meta">
+                    <span>Por Gabriel Marques</span> | 
+                </div>
+            </header>
+
+            <div class="reportagem-conteudo">
+                <p>Com o advento da Internet e a criação das Redes Sociais, a comunicação no mundo todo ficou mais próxima. Criada nos anos de 1960, em um mundo onde o processo de globalização era latente, a internet elevou isso a outro nível. Agora, no século XXI, com seus meios de comunicação já estabelecidos, as redes sociais mostram toda sua influência no mundo, tanto comportamental, quanto política, e toda sua questão acerca da liberdade que os usuários têm. E mesmo que a ideia de aproximação seja nobre e realmente traga muitos benefícios, é necessário também apontar seus perigos.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/Ilustração 1.png" alt="Existe na sociedade um estereótipo relacionado aos jovens em que eles são mais adeptos a pautas progressistas e liberais, entretanto, este cenário está mudando. Segundo a escritora e pesquisadora inglesa Laura Bates, pela primeira vez na história, o machismo é maior entre os jovens. Movimento causado pela radicalização em massa de meninos e adolescentes influenciados pelos algoritmos da internet.">
+                    <figcaption>Existe na sociedade um estereótipo relacionado aos jovens em que eles são mais adeptos a pautas progressistas e liberais, entretanto, este cenário está mudando. Segundo a escritora e pesquisadora inglesa Laura Bates, pela primeira vez na história, o machismo é maior entre os jovens. Movimento causado pela radicalização em massa de meninos e adolescentes influenciados pelos algoritmos da internet.<br><strong>Ilustração: Gabriel Marques</strong></figcaption>
+                </figure><!-- sem foto no repositorio -->
+                
+                   <p>8 de janeiro de 2023, talvez um ponto de mudança realmente chocante do poder que os meios de comunicação digitais podem ter. Nesse dia, manifestantes golpistas invadiram e depredaram o Palácio do Planalto em detrimento da insatisfação do resultado das eleições de 2022, em que Jair Bolsonaro perdeu para Luiz Inácio Lula da Silva, na tentativa de pôr em xeque a Democracia Brasileira. Os grupos bolsonaristas no Telegram foram um lugar onde esse ataque pode se planejar. “Esses grupos são muito perigosos, principalmente pela sua capacidade de incubar, de organizar, de legitimar ações antidemocráticas, violentas, preconceituosas e extremistas. E o caso do 8 de janeiro mostrou que não são apenas fóruns de discussão, são espaços de mobilização política concreta. Então, ali vão ser articuladas ações, vão ser planejados ataques, vai ser reforçada uma visão às vezes conspiratória da realidade”, explica a pesquisadora da Fundação Getúlio Vargas, Letícia Sabbatini.</p>
+                <p>A grande mobilização que acontece nesses grupos é um fenômeno real e maior do que muita gente imagina. Uma matéria publicada na <a href="https://apublica.org/2023/07/grupo-de-30-mil-membros-administrado-por-allan-dos-santos-convocou-atos-de-8-de-janeiro/#Administrador">Agência Pública</a>, revelou que o influencer bolsonarista, que está foragido da justiça, Allan dos Santos, administrava um grupo com mais de 30 mil membros no Telegram em que fazia convocações e discussões sobre “a retomada de Brasília”. Isso mostra como a extrema direita conseguiu se organizar por esses meios de comunicação e mobilizar muitas pessoas, e assim, formar a construção do imaginário da população que cria guerras culturais, políticas e sociais no Brasil.</p>
+
+                <h2>A Influência das Fake News</h2>
+                
+                <p>As fake news sempre existiram, e não se restringem apenas à extrema direita. Entretanto, as eleições de 2018 e os seguintes mandatos mostram que se utilizam delas como força motriz para alcançar influência e poder. “As fake news vão operar de forma muito estratégica e muito sofisticada no imaginário político da população, porque não se trata apenas de disseminar informação falsa, mas de construir sentido, de construir imaginários. A partir disso, então, as fake news vão atuar por meio, por exemplo, de narrativas simplificadas que são capazes de produzir afetos. E, dessa forma, vão favorecer a construção de inimigos, aquela narrativa nós versus eles” explicou Letícia.</p>
+                
+                <div class="info-box">
+                    <p> No campo acadêmico existe uma diferenciação conceitual para qualificar a forma como as fake news são divulgadas. <strong>Misinformation</strong>, ou má informação para se referir ao compartilhamento não intencional, e <strong>Disinformation</strong>, ou desinformação para o compartilhamento intencional, coordenado ou não, de informações falsas com o objetivo de enganar as pessoas.</p>
+                </div>
+                            
+                <p>Em 2018, um estudo feito pela organização Avaaz apontou que 98,21% dos eleitores de Jair Bolsonaro foram expostos a uma ou mais notícias falsas durante a eleição, e 89,77% acreditaram que se tratava de notícias verdadeiras. O importante é que a criação e divulgação das fake news não são somente “notícias falsas”, elas tem toda uma intencionalidade por trás, um tom quase propagandista para esses políticos. “É importante também a gente pensar que a descredibilização dos agentes políticos tradicionais e das instituições como um todo, imprensa, saúde, enfim, é parte central desse processo de construir sentidos. Então, por exemplo, juízes vão ser taxados como corruptos, jornalistas, vão ser chamados de mentirosos, de ativistas. Professores passam a ser tratados como doutrinadores. Então, esse tipo de narrativa, além de motivar afetos negativos, mina a possibilidade de um debate público baseado em fatos, e abre espaço para que lideranças autoritárias surjam, que são lideranças que se apresentam como anti-sistema.” Afirmou Letícia. Dessa forma, figuras tidas como “salvadoras” vão emergir e ter uma ascensão política em detrimento dessas questões.</p>
+                <p>Questões como o Kit Gay, a ameaça comunista, a liberação de cirurgia de troca de sexo para menores de idade, são realidades impostas para criar um imaginário na popuação de pânico, impor que esses grupos ameaçam as construções de família e liberdade, lemas da direita. E essas construções vão gerando rixas na sociedade, incitando ódio a minorias, criando culpados para os problemas do Brasil, e assim gerando uma idolatria dos eleitores com os seus representantes. “Quando figuras políticas são tratadas como Messias ou como heróis, qualquer crítica a elas é vista como ataque personal e qualquer notícia que as beneficie, mesmo falsa, é imediatamente validada. Então, a verdade passa a ser uma questão quase de lealdade e daquela informação confirmar o que você já pensa”, reflete Letícia.</p>
+                
+                <blockquote class="pull-quote">“E aí, esse tipo de comportamento, Ele transforma o ato de compartilhar fake news em um gesto de pertencimento a uma comunidade política. Então, a desinformação, Ela não apenas circula, mas ela é acolhida, ela é defendida. E ela é usada como ferramenta de combate simbólico”<br>– Letícia Sabbatini</blockquote>
+
+                <p>O Whatsapp é um dos lugares onde as fake news mais se proliferam. Segundo dados da Fundação Oswaldo Cruz (Fiocruz), durante a pandemia de Covid-19, 73,7% das informações e notícias falsas sobre o coronavírus circularam pelo aplicativo de troca de mensagens. Outros 10,5% foram publicados no Instagram e 15,8% no Facebook. O Whatsapp se destaca pela quantidade de usuários e o ambiente informal e familiar, onde se tem contato direto com amigos e família, que muitas vezes valorizam muito mais experiências pessoais do que dados de autoridades. A exemplo disso, o negacionismo sobre o processo de vacinação e a suposta eficácia do remédio Cloroquina no combate ao Coronavírus, em que o Jair Bolsonaro divulgou. Autoridades de pesquisa em saúde como a Fiocruz contestaram e provaram se tratarem de fake news, mas a radicalização política e a adesão emocional a líderes e a supervalorização da experiência personal fez com que muitas pessoas aderissem ao discurso do ex-presidente. De acordo com o Ministério da Saúde, mais de 700 mil pessoas morreram de Covid-19 no Brasil.</p>
+
+                <h2>Ideologia Estabelecida</h2>
+                <p>Uma das marcas da atuação da extrema-direita nas redes sociais é o seu fascínio pela liberdade de expressão. Esse tema tem gerado muitas polêmicas nos últimos anos, onde se confunde a liberdade de expressão com a liberdade de ódio, e diante do avanço das tecnologias e da crescente influência das redes sociais na formação da opinião pública, é necessário que se entenda os limites entre o direito à livre manifestação e a responsabilidade pelo discurso na medida em que cresce o número de casos de racismo, nazismo, machismo e homofobia nas redes sociais.</p>
+
+                <div class="info-box">
+                    
+                    <figure class="minha-figura">
+                        <img src="assets/img/Infográfico 1.jpg" alt="Descrição da imagem" class="imagem-responsiva">
+                    </figure>
+                    
+                    
+                    <p>Considerando todo o período de 2017 a 2022, o tipo de crime de ódio mais denunciado na Central da SaferNet foi o de apologia a crimes contra a vida (76,1 mil), seguido da misoginia (74,3 mil no total). Ainda durante o período, a misoginia foi o crime de ódio que mais cresceu, passando de 961 denúncias, em 2017, para 28,6 mil em 2022, representando um aumento de quase 30 vezes. Durante os cinco anos também foram registradas 45,6 mil denúncias de racismo, 32,6 mil de neonazismo, 28,3 mil de LGBTfobia, 25,9 mil ocorrências de xenofobia e 10,2 mil de intolerância religiosa.</p>
+                
+                    <figure class="minha-figura">
+                        <img src="assets/img/Infográfico 2.jpg" alt="Descrição da imagem" class="imagem-responsiva">
+                    </figure>
+                
+                </div>
+
+                <p>Jeniffer de Jesus Souza, de 22 anos, estudante de Serviço Social pela Unifesp, assim como a maioria dos jovens, começou a usar as redes sociais muito cedo.<sup><a href="#nota1" aria-label="Ver nota 1" class="nota-link"><span class="nota-simbolo">+</span></a></sup> Primeiramente, usava como todo adolescente, estava em grupos dos artistas que gostava, das séries e filmes. Hoje, com seu perfil “Maconhilda” tem mais de 100 mil seguidores no X (antigo Twitter), e fala sobre seu dia a dia, suas relações, suas aflições, e sempre foi uma pessoa engajada politicamente mais à esquerda. Desde 2022, Jenny vem sofrendo diversos ataques de cunho misógino e racista. “Eles vazaram os meus dados, falavam que iam me estuprar”, declarou. Também se utilizaram de Deepfakes<sup><a href="#nota2" aria-label="Ver nota 2" class="nota-link"><span class="nota-simbolo">+</span></a></sup>, com o uso de inteligência artificial para produzirem fotos nuas dela e de diversas outras mulheres, com o intuito de humilhar, e a partir do medo, tentar diminuir suas vozes.</p>
+                <p>Em 2024 esses ataques tomaram uma proporção gigante, e Jeniffer buscou justiça contra aqueles que a atacam. Entrou em processo contra cerca de 30 perfis, para isso, promoveu uma Vakinha, onde foi muito criticada. Com a justificativa que era só ela desligar a internet e viver a vida real.</p>
+                <p>No dia 12 de junho de 2025, a <a href="https://apublica.org/2025/06/influenciadora-laura-sabino-sobrevive-a-tentativa-de-assassinato-e-sofre-ataques-nas-redes/"> Agência Pública</a> publicou a reportagem sobre a tentativa de assassinato de Laura Sabino. Laura é muito relevante na bolha política das redes sociais, sendo uma das principais divulgadoras da esquerda na internet. O ataque foi feito pelo seu irmão, motivado pelas fake news divulgadas sobre sua irmã e a atuação política dela no Brasil, mostrando como ataques na internet não se limitam somente ao ambiente digital e podem sim chegar à realidade. Jenny ainda enfrenta as burocracias jurídicas dos crimes digitais, mas esses movimentos são importantes na luta contra essas organizações.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/ilustração 2.jpg" alt="Ilustração representando ataques coordenados em redes sociais.">
+                    <figcaption>A maioria desses ataques se formam em conjunto. Quando encontram um alvo, geralmente mulheres, pessoas negras e pessoas da comunidade LGBTQIAPN+, se juntam para um ataque em massa.<br><strong>Ilustração: Gabriel Marques</strong></figcaption>
+                </figure>
+
+                <p>Os discursos masculinistas estão se tornando cada vez mais recorrentes, a ideologia incel<sup><a href="#nota3" aria-label="Ver nota 3" class="nota-link"><span class="nota-simbolo">+</span></a></sup> e redpill<sup><a href="#nota4" aria-label="Ver nota 4" class="nota-link"><span class="nota-simbolo">+</span></a></sup> surge em reação à crescente autonomia das mulheres em relação às expectativas no mundo profissional, social e sexual, desafiando homens que não acompanharam essa evolução. Esses homens, frequentemente reunidos no espaço virtual, esperam que as mulheres se submetam a eles, regredindo a construções já superadas pela sociedade.</p>
+                <p>Uma geração de homens frustrados responde com ódio, e esses discursos se propagam muito rapidamente pela internet com adolescentes. Fóruns como Dogolachan e páginas do Discord exaltam esse comportamento e idolatram indivíduos que já cometeram atentados contra minorias. Em entrevista ao podcast <a href="https://www.youtube.com/watch?v=q52jyluCug0">Rádio Novelo - Fio da Meada</a>, a juíza titular da Vara da Infância e Juventude do Rio de Janeiro, Vanessa Cavalieri revela: “Passou a chegar um outro perfil de adolescentes, que não frequentavam o Judiciário. De classe média, classe alta, alunos das melhores escolas do Rio de Janeiro, envolvidos em atos violentos, crimes que eu nunca tinha visto, sabe? De terrorismo ou apologia ao nazismo. Começou a chegar racismo”.</p>
+
+                <h2>A Regulamentação</h2>
+
+                <p>Aumenta a discussão sobre o regulamento das redes sociais, o tema gera polêmica pois há uma linha muito tênue entre a regulação e a censura, mas os casos abordados aqui mostram como é necessário as conversas sobre o assunto.</p>
+                <p>É importante entender que essas plataformas não são só simples mediadoras da comunicação, são empresas com interesses, e esses interesses giram em torno do lucro. “Esse modelo de negócio prioriza o engajamento. Não importa se o que engaja mais é discurso de ódio, fake news, polarização, radicalização,” diz Letícia.</p>
+                <p>E essas grandes figuras donas dessas empresas vêm se envolvendo cada vez mais politicamente, exemplo de Elon Musk, dono do X, que no início da campanha, estava junto de Donald Trump, e a rede social comandada por Musk vai estar de acordo com os ideais políticos do presidente dos Estados Unidos, que são a não regulamentação, o ataque às instituições e as minorias. No Brasil, um grupo parlamentar conhecido como “Bancada do Like” é quem vai representar os interesses das big-techs.<sup><a href="#nota5" aria-label="Ver nota 5" class="nota-link"><span class="nota-simbolo">+</span></a></sup></p>
+                <p>Essas empresas trabalhavam com o modelo da auto regulação, na tentativa da não responsabilização sobre conteúdos publicados, responsabilizando somente o usuário. No dia 26 de junho o Supremo Tribunal Federal (STF) decidiu, por 8 votos a 3, que as redes podem ser responsabilizadas por postagens de usuários. Com a presença de conteúdo irregular as redes levarão uma notificação extrajudicial. As Plataformas estão sujeitas à responsabilização civil caso não removam conteúdo após notificação extrajudicial feita pela vítima. A Corte entende que em casos graves como racismo, terrorismo e divulgação de pornografia infantil as empresas devem ser proativas para remover o conteúdo. Esse posicionamento sinaliza uma possível transformação no cenário jurídico digital brasileiro, ampliando a responsabilidade das plataformas e exigindo delas um maior compromisso com a moderação de conteúdos ilícitos.</p>
+
+
+                <p>Diante de um cenário tão complexo e multifacetado, repensar o papel das redes sociais na sociedade é essencial para compreender como a tecnologia pode tanto fortalecer quanto ameaçar direitos, instituições e vidas.</p>
+                
+                <div class="info-box nota-box-interativo" id="nota1">
+                    <p>De acordo com a pesquisa TIC Kids Online Brasil lançada em 2023, mais de 95% da população entre 9 e 17 anos de idade são usuários da internet. Destes, 88% afirmam ter algum perfil em rede social. O Instagram é a mais usada entre os respondentes, e a preferida dos que têm entre 15 e 17 anos (62%).</p>
+                </div>
+
+                <div class="info-box nota-box-interativo" id="nota2">
+                    <p>Deepfake é uma técnica que permite alterar um vídeo ou foto com ajuda de inteligência artificial (IA). Com ele, por exemplo, o rosto da pessoa que está em cena pode ser trocado pelo de outra; ou aquilo que a pessoa fala pode ser modificado.</p>
+                </div>
+
+                <div class="info-box nota-box-interativo" id="nota3">
+                    <p>“Na comunidade online, o termo "incel" (abreviação de celibatário involuntário) refere-se a homens que se consideram incapazes de encontrar parceiros românticos ou sexuais, apesar de desejarem esses relacionamentos. Eles compartilham frustrações em fóruns, expressando sentimentos de exclusão sexual e social, muitas vezes alimentados por uma ideologia que considera injustas as normas sociais que favorecem homens fisicamente atraentes e bem-sucedidos.” (PINTO, Júlio César Aranha Serra. O movimento da supremacia masculina e propagação de ódio nas redes: um ensaio sobre a cultura Incel. São Luís: Centro Universitário UNDB, 2024.)</p>
+                </div>
+
+                <div class="info-box nota-box-interativo" id="nota4">
+                    <p>"Red pill" (uma referência ao filme "Matrix", indicando uma suposta consciência sobre a realidade distorcida dos relacionamentos). Alguns membros defendem ideias extremas e misóginas, culpando a sociedade e as mulheres por suas dificuldades românticas.” (PINTO, Júlio César Aranha Serra. O movimento da supremacia masculina e propagação de ódio nas redes: um ensaio sobre a cultura Incel. São Luís: Centro Universitário UNDB, 2024.)</p>
+                </div>
+
+                <div class="info-box nota-box-interativo" id="nota5">
+                    <p>Big-techs são grandes empresas de tecnologia que têm muita influência nos mercados em que atuam, dominando setores como tecnologia da informação, comunicação e internet.</p>
+                </div>
+
+            </div>
+
+        </article>
+    </main>
+
+<script>
+// SCRIPT ORIGINAL - SEM MUDANÇAS, GARANTINDO O FUNCIONAMENTO
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.reportagem-container');
+    if (!container) return;
+
+    const notaLinks = document.querySelectorAll('sup a.nota-link');
+    let openNoteBox = null;
+
+    const closeOpenNote = () => {
+        if (openNoteBox) {
+            openNoteBox.style.display = 'none';
+            openNoteBox = null;
+        }
+    };
+
+    notaLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation(); 
+
+            const anchor = link.parentElement; 
+            const targetId = link.getAttribute('href').substring(1);
+            const targetBox = document.getElementById(targetId);
+
+            if (!targetBox) return;
+
+            const isSameBox = openNoteBox === targetBox;
+            closeOpenNote(); 
+
+            if (isSameBox) {
+                return; 
+            }
+            
+            openNoteBox = targetBox;
+
+            const containerRect = container.getBoundingClientRect();
+            const anchorRect = anchor.getBoundingClientRect();
+
+            // Calcula a posição da nota em relação ao container (LÓGICA ORIGINAL)
+            const top = (anchorRect.bottom - containerRect.top) + 10; // 10px abaixo do número
+            let left = anchorRect.left - containerRect.left;
+
+            // Aplica as posições e exibe a nota para podermos medir suas dimensões
+            targetBox.style.top = `${top}px`;
+            targetBox.style.left = `${left}px`;
+            targetBox.style.display = 'block';
+
+            const boxRect = targetBox.getBoundingClientRect();
+
+            // Centraliza a nota abaixo do número
+            left = left + (anchorRect.width / 2) - (boxRect.width / 2);
+
+            // Verifica se a nota ultrapassa as bordas do container e ajusta se necessário
+            if (left < 10) { // Deixa uma margem de 10px à esquerda
+                left = 10;
+            } else if (left + boxRect.width > container.clientWidth - 10) {
+                // Deixa uma margem de 10px à direita
+                left = container.clientWidth - boxRect.width - 10;
+            }
+
+            // Aplica a posição 'left' final
+            targetBox.style.left = `${left}px`;
+        });
+    });
+
+    // Adiciona um listener para fechar a nota ao clicar em qualquer lugar fora dela
+    document.addEventListener('click', function(event) {
+        if (openNoteBox && !openNoteBox.contains(event.target) && !event.target.closest('sup a.nota-link')) {
+            closeOpenNote();
+        }
+    });
+});
+</script>
+
+</body>
+</html>
