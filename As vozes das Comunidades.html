@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>As vozes das comunidades</title>
+    
+    <style>
+        /* IMPORTAÇÃO DAS FONTES DO GOOGLE */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+        /* VARIÁVEIS DE COR */
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5eee5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reportagem-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-subtitulo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .reportagem-imagem-destaque {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .reportagem-imagem-destaque img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+
+        .reportagem-conteudo h2 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #333;
+            font-size: 1.8em;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+        
+        /* ESTILO PARA CITAÇÃO DE ABERTURA */
+        .quote-abertura {
+            font-size: 0.95em;
+            font-style: italic;
+            text-align: right;
+            color: var(--cor-texto-secundario);
+            margin: -20px 0 40px 0;
+            padding: 0 10%;
+            border: none;
+        }
+        .quote-abertura cite {
+            display: block;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* ESTILO PARA CITAÇÃO EM DESTAQUE (OLHO) */
+        .pull-quote {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4em;
+            font-style: italic;
+            text-align: center;
+            color: var(--cor-texto-secundario);
+            margin: 50px auto;
+            padding: 10px 20px;
+            max-width: 600px;
+            border-left: 4px solid var(--cor-borda);
+            border-right: 4px solid var(--cor-borda);
+            position: relative;
+        }
+        .pull-quote cite { /* Estilo para o autor da citação dentro do pull-quote */
+            display: block;
+            font-size: 0.7em; /* Menor que o texto da citação */
+            font-weight: bold;
+            margin-top: 15px;
+            font-style: normal; /* Remove itálico do nome do autor */
+        }
+        
+        /* LAYOUT IMAGEM AO LADO DO TEXTO */
+        .layout-imagem-texto {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+            margin: 40px 0;
+        }
+        .layout-imagem-texto .coluna-imagem {
+            flex: 1;
+            min-width: 250px;
+        }
+        .layout-imagem-texto .coluna-imagem img {
+             width: 100%;
+             border-radius: 8px;
+             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .layout-imagem-texto .coluna-imagem figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            margin-top: 10px;
+        }
+        .layout-imagem-texto .coluna-texto {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+     
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="reportagem-container">
+            
+            <header>
+                <h1 class="reportagem-titulo">As vozes das comunidades</h1>
+                <p class="reportagem-subtitulo">Como páginas de notícias informais transformam a comunicação em cidades e bairros periféricos</p>
+                <div class="reportagem-meta">
+                    <span>Por Rita Martins</span> | 
+                </div>
+            </header>
+
+            <div class="reportagem-conteudo">
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/FunPic_20250626_182327250.jpg" alt="Desenho representando a comunicação e a troca de informações.">
+                    <figcaption><strong>Desenho: Beatriz Jansen</strong></figcaption>
+                </figure>
+
+                <p>A cena é a seguinte: uma mulher em um salão de beleza acaba de escutar uma conversa sobre um acidente no bairro em que mora, coisa que raramente aparece na TV ou nos jornais e quando aparece é de forma negativa. Isso dificulta a descobrir novas informações sobre o que acontece e saber o que de fato ocorreu. Pela rua, a mulher escuta alguns vizinhos do bairro falando sobre o acidente, mas ainda é difícil de entender o que houve, porque cada um fala algo diferente e ninguém possui a informação completa. Ela abre o celular e navega pela internet. Entre algumas publicações no Instagram, a mulher encontra todos os fatos em uma página de notícias de seu bairro.</p>
+                <p>O mundo está cheio de informações, principalmente com as novas tecnologias que facilitam o consumo e a distribuição de conhecimentos. Entretanto, ainda existem lugares pelo Brasil que vivem em um deserto de informações, comunidades abandonadas pelo jornalismo profissional e só possuem acesso a fatos negativos sobre o próprio lugar. “A divulgação de notícias não é um luxo, é uma necessidade básica. Se essas comunidades não têm quem cumpra, eles vão ter que criar do jeito que conseguem. Aí vai ser na base da gambiarra, vai ser na base de iniciativas meio precárias. Se a opção é ficar no deserto de notícias, eles vão criar suas próprias opções,” afirma o professor de Jornalismo da Universidade Federal Rural do Rio de Janeiro, André Holanda, especializado em comunicação digital.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/ilustração .jpg" alt="O Brasil é o país que mais consome notícias pelas redes sociais segundo dados do levantamento da Comscore sobre comportamento dos consumidores e o impacto das redes sociais.">
+                    <figcaption>O Brasil é o país que mais consome notícias pelas redes sociais segundo dados do levantamento da Comscore sobre comportamento dos consumidores e o impacto das redes sociais.<br><strong>Foto: Rita Martins</strong></figcaption>
+                </figure>
+
+                <p>Nessa precariedade de informações, começam a surgir páginas de notícias informais na internet. O criador do <a href= https://www.instagram.com/seropedicanews/?hl> Seropédica News</a>, uma conta de divulgação de notícias do município de Seropédica, Rafael Nunes, desenvolveu a página após observar que não havia nenhuma notícia sobre os problemas recorrentes do bairro onde morava. “É um meio de se informar e de entender o que acontece na cidade. A gente fala sobre tudo o que acontece dentro e fora de Seropédica, tentamos sempre focar em algo que vá se relacionar com alguém da cidade,” diz Rafael. A página começou no Instagram há sete anos e hoje acumula mais de 70 mil seguidores. “As pessoas entendem que ali tem informação de verdade, isso cria uma responsabilidade muito grande. A gente escuta moradores falando que aconteceu algo e as pessoas vão perguntar no Seropédica News para saber se é verdade,” explica.</p>
+
+                <figure class="reportagem-imagem-destaque" alt="">
+                    <img src="assets/img/seropedica news (1).jpg" alt="A página Seropédica News divulga o comércio local, informações de utilidade pública e acontecimentos do município.">
+                    <figcaption>A página Seropédica News divulga o comércio local, informações de utilidade pública e acontecimentos do município.</figcaption>
+                </figure>
+
+                <p>Além do Instagram, a página migrou para as outras redes sociais como o Facebook, WhatsApp e TikTok, mas nenhuma conta possui o mesmo alcance da principal. Rafael iniciou a ideia sozinho e hoje recebe a ajuda de dez pessoas nas postagens e na apuração de notícias. O que também começou por amor à causa, agora faz parte da sua renda. 
+                
+                <blockquote class="pull-quote">
+                    <p>“A nossa maior dificuldade hoje é ter o senso de responsabilidade. Querendo ou não, a notícia pode acabar com a vida de alguém, então a gente tenta ao máximo não cometer esse erro. A grande mídia erra, só que eles são grandes, eles podem fazer isso, vão pedir uma desculpa e tá tudo certo,”</p>
+                    <cite>– Rafael Nunes, criador do Seropédica News</cite>
+                </blockquote>
+                <p>Apesar de não ser uma novidade no meio jornalístico, esse tipo de comunicação aproxima e valoriza os moradores da comunidade da qual fala. “Os meios de comunicação já tinham a possibilidade de chamar o público. Eu acho que no mercado já tem uma cultura de acolher essa participação, o tipo de conteúdo que eles oferecem não é diferente do papel que eles fazem como fonte do jornalista, porque eles só podem falar do que testemunham ali muito próximos a eles,” expõe o pesquisador, André Holanda.</p>
+                <p>Todo o conteúdo divulgado por essas páginas é composto pelas pessoas da comunidade, elas denunciam atos de violência, informações e problemas do bairro. A todo momento, essas páginas publicam denúncias que centenas de pessoas encaminham a elas 24 horas por dia. Dessa maneira, é necessário ter uma checagem e apuração dos fatos aprimorada. Para confirmar o conteúdo das denúncias enviadas, os administradores das páginas observam se a informação passada por outras pessoas é a mesma da denunciada. Além disso, eles também pesquisam na internet e checam em órgãos públicos. “Hoje a gente chegou num ponto em que recebemos, geralmente, a notícia da fonte. Quando acontece algum acidente, checamos essa informação direto com os Bombeiros, com a Polícia Militar e etc. Quando é uma notícia que não conseguimos checar com esses meios, a gente tenta fazer ligações, vamos nos grupos de WhatsApp para ver se isso está saindo de várias fontes diferentes,” afirma Rafael Nunes.</p>
+                <p>Além de dar informação aos moradores de comunidades próximas, esses veículos também levam a cultura. É o caso da conta <a href= https://www.instagram.com/cg_meupais/?hl> CG Meu País</a> que aborda conteúdos diferentes do visto nas páginas de comunicação pela internet. De piadas e cobertura de eventos a informações sobre o trânsito, ela divulga notícias do dia a dia e de fatos históricos de Campo Grande, um dos bairros mais populosos do Brasil. “Eu vou mais pela parte histórica, faço alguns memes e falo das coisas que existiam em Campo Grande. Estou sempre apoiando os eventos culturais que acontecem aqui. Eu divulgo e informo sobre o que está ocorrendo, mas sempre com a intenção de prestar um serviço à comunidade, nunca de forma sensacionalista,” diz o criador da página, João Ricardo Mello. Nascido e criado em Campo Grande, João Ricardo é apaixonado pelo bairro e quer espalhar seus conhecimentos da cultura da comunidade aos moradores. Ele é professor de Educação Física, mas encontra em seu tempo livre espaço para administrar a página com a ajuda de uma social media. “É a minha rotina, a minha realidade. Eu falo de Campo Grande porque é um lugar que eu moro há 45 anos, então eu estou falando da minha vivência, eu falo do cotidiano de quem vive aqui”, afirma.</p>
+                <p>Pela credibilidade e visibilidade de sua página, o professor é convidado para diversos eventos que acontecem no bairro. A página possui 51 mil seguidores no Instagram que participam com frequência nas postagens. “Eu passo informações relevantes daquele cotidiano de violência, hoje em dia quando a gente olha para a televisão a gente só vê isso, então as pessoas interagem bastante para ter uma fuga dessa realidade que todas as outras páginas gostam de frisar bastante, é um momento de saudosismo da galera”, explica o administrador do CG Meu País.</p>
+                <p>Por estar na internet, os assuntos divulgados pelas páginas de notícia possuem um imenso poder de distribuição e influência nas pessoas. O criador do veículo <a href= https://www.instagram.com/belfordroxo24h/?hl> Belford Roxo 24h </a> e do <a href= https://www.instagram.com/jornaldemeriti/?hl> Jornal de Meriti</a>, Ronaldo Cunha, transformou suas páginas nas redes sociais em um local de aprendizado para as pessoas dessas comunidades. Ao observar o medo dos moradores de se pronunciar sobre os acontecimentos do bairro, ele instrui seus seguidores a divulgar informações com um método que facilita a checagem da notícia. Para delatar algo, é necessário gravar um vídeo do acontecimento com as informações do dia, horário, lugar e nome do emissor. Além de facilitar a verificação da notícia, ele os ensina a denunciar e a checar informações de maneira correta.</p>
+                <p>Ronaldo Cunha é formado em Tecnologia da Informação e mora em Saquarema, mas administra as páginas de notícias dos municípios de Belford Roxo e de São João de Meriti. Ele não possui uma equipe e dirige as duas contas apenas com o auxílio de recursos de inteligência artificial. Com um lema de sigilo total, ele criou as páginas para combater as influências políticas dentro da divulgação de informações e a falta de notícias que assolava os municípios, juntas elas alcançam mais de 150 mil seguidores.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/jornal de meriti (1).jpg" alt="Print da página do Jornal de Meriti nas redes sociais.">
+                    <figcaption>O Jornal de Meriti é a maior página de notícias do município nas redes sociais.</figcaption>
+                </figure>
+                
+                <h2>O preço da informação</h2>
+
+                <p>Por apenas pautarem o que está próximo desses bairros, os criadores das páginas veem uma extrema dificuldade em serem reconhecidos como comunicadores. A internet surgiu para facilitar a troca de informações e, com isso, qualquer pessoa com a ferramenta e a habilidade correta passa a poder divulgar notícias. Entretanto, não recebem o mesmo crédito do jornalismo profissional. “A grande mídia não vê a gente como comunicadores, mas apenas como donos de páginas", diz Ronaldo Cunha. Além disso, esses espaços de comunicação se tornaram objetos importantes para as comunidades. Ao ver um acontecimento, os moradores se manifestam primeiro nessas páginas e depois para a comunicação profissional. “Eu acho que é o maior canal de comunicação com as pessoas, é um meio muito próximo entre a comunidade e os fatos relevantes que acontecem na cidade. Hoje o que pauta a comunicação de forma geral são as redes sociais e, principalmente, essas páginas de bairro,” diz o criador do CG Meu País, João Ricardo Mello.</p>
+                <p>Esses veículos não possuem garantias jurídicas em suas postagens, dessa maneira eles precisam ter responsabilidade ao publicar seus conteúdos. Apesar de transmitirem informação e cultura, elas também podem levar a consequências para os administradores e para as comunidades. O comunicador, Ronaldo Cunha, foi processado por escrever um número de telefone incorreto em uma postagem do Belford Roxo 24h. “Por mais interessante que seja a proposta, é uma publicação em um veículo que não tem grandes garantias, não tem advogados para proteger as pessoas. O cidadão comum não tem armas para se impor frente a esses interesses. Os jornais profissionais tem um certo poder, certas garantias. Numa rádio comunitária, numa página de comunidade, não tem garantia nenhuma,” afirma o professor de Jornalismo, André Holanda. Informações incorretas passadas em uma publicação também podem levar a casos de violência. Rafael Nunes, do Seropédica News, afirma que já fizeram denúncias de informações falsas para a sua página, mas que não chegou a publicar. “A gente recebeu um informe de um homem que estava em um ônibus lotado e uma mulher acusou ele de ter ejaculado nela. Colocaram o cara para fora do ônibus e agrediram ele. Só que depois de ter rodado em vários grupos como sendo verdade, viram que só tinha vazado um vidro de álcool no bolso dele,” explica. A partir de vários casos de notícias falsas que circulam pelas plataformas digitais foi criada, em 2014, a lei do Marco Civil da Internet que responsabiliza os conteúdos divulgados nas redes.</p>
+                <p>As páginas de notícias nas redes sociais podem ser a única fonte dos acontecimentos cotidianos de algumas comunidades e o crescimento desses veículos mostram a necessidade de uma comunicação mais próxima e cultural. Esses canais digitais enfrentam desafios relacionados à credibilidade e à ausência de garantias legais, e seus administradores lidam com limitações que tornam o trabalho mais vulnerável. Mesmo com essas dificuldades, as páginas de bairro nas redes sociais são um meio importante de disputas para ecoar as vozes de comunidades muitas vezes abandonadas.</p>
+
+
+        </article>
+    </main>
+
+</body>
+</html>

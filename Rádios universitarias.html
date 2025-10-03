@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A internet dos que não têm computador</title>
+    
+    <style>
+        /* IMPORTAÇÃO DAS FONTES DO GOOGLE */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+        /* VARIÁVEIS DE COR */
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5e5e5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reportagem-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-subtitulo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .reportagem-imagem-destaque {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .reportagem-imagem-destaque img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+
+        .reportagem-conteudo h2, .reportagem-conteudo h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .reportagem-conteudo h2 {
+            font-size: 1.8em;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="reportagem-container">
+            
+            <header>
+                <h1 class="reportagem-titulo">Rádios Universitárias e o acesso livre à informação</h1>
+        
+                <div class="reportagem-meta">
+                    <span>Por Evelyn de Souza</span> | 
+                
+                </div>
+            </header>
+
+            <div class="reportagem-conteudo">
+                
+                <p>As rádios universitárias são emissoras de rádio vinculadas a instituições de ensino superior, que exercem um papel fundamental na comunicação pública. Essas emissoras podem ser geridas pela Reitoria ou por setores ligados a ela. Podem funcionar, principalmente, em faculdades de Comunicação, servindo como espaço de aprendizado para alunos de Jornalismo, Rádio e TV. Conforme o professor de Jornalismo da UFRJ e diretor da rádio da instituição, Marcelo Kischinhevsky, as rádios universitárias vão além de veicular programas com finalidades educativas e/ou culturais, as rádios universitárias conectam as instituições de ensino superior com a sociedade, divulgam ciência e tecnologia e ajudam na formação profissional. Por meio das transmissões de programas e podcasts, aproximam os universitários da informação e do entretenimento de forma didática e dinâmica.</p>
+                <p>Um exemplo de rádio universitária é a Rádio UERJ. Ela está no ar desde maio de 2005, consolidando-se como um dos principais canais de comunicação da Universidade do Estado do Rio de Janeiro. Com transmissão 24 horas por dia, a emissora oferece uma programação variada, produzida por professores, servidores e estudantes. </p>
+              <p>A estação de Rádio ligada ao CTE (Centro de Tecnologia Educacional) da UERJ, também se destaca pela promoção de serviços de utilidade pública e pela divulgação de ações institucionais, ligando a universidade à população. Atualmente, a Rádio conta com mais de dez programas transmitidos, que podem ser encontrados no Spotify, YouTube e no site oficial.</p>
+                <p>De acordo com Ângelo Figueiredo, aluno de Jornalismo e estagiário da Rádio UERJ, os estagiários atuam como assistentes de produção e têm um papel ativo em diversas etapas da produção jornalística. Além de produzir conteúdos do dia a dia, como boletins, agendas e spots, muitos também são responsáveis por programas fixos, como os podcasts da emissora.“Todos os programas têm como foco descomplicar a linguagem e tornar mais palpáveis assuntos teoricamente difíceis como direito ou pesquisa científica, por exemplo. Então, tentamos diariamente estar mais próximos do grande público e democratizar o acesso ao conhecimento dentro e fora da universidade”, disse Ângelo.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/Radio Uerj.jpg" alt="Rádio UERJ e a produção de conhecimento sonoro.">
+                    <figcaption>Rádio UERJ e a produção de conhecimento sonoro.<strong> <br> Foto: Ângelo Figueiredo </strong></figcaption>
+                </figure>
+
+                <p>Segundo ele, todo o conteúdo é acompanhado de perto por profissionais da rádio, que revisam textos, orientam locuções e supervisionam as produções. A equipe é composta por quatro jornalistas, dois operadores de áudio, estagiários de graduação em comunicação e estagiários técnicos em áudio. Além dos programas fixos, a equipe também realiza coberturas de eventos, sempre com apoio de um servidor ou da produtora da rádio.</p>
+               <p>A Coordenadora de produção em áudio da Rádio UERJ, Thalyta Mitsue, também acrescenta: “Ao trabalhar com linguagem acessível, formatos variados e temáticas relevantes, a Rádio amplia a circulação do saber produzido na Universidade, ultrapassando os muros institucionais.”</p>
+                
+                <h2>Rádio Plural</h2>
+
+                <p>O papel das rádios educativas na democratização da comunicação pode ser visto em diferentes âmbitos. Um deles, é a possibilidade da pluralidade de vozes atuantes na comunicação. Diferente das rádios comerciais, as rádios universitárias não possuem fins lucrativos e atuam em espaços de ensino, informação e divulgação cultural. Sendo assim, os alunos têm a oportunidade de priorizar não apenas a quantidade de audiência, mas também a qualidade da programação.</p>
+                <p>O doutor em Linguística Aplicada, jornalista Ciro Pedroza, é autor da tese "Que Rádio é essa? Radiodifusão Universitária em Natal - RN”. A pesquisa mostra a importância das rádios universitárias enquanto formadoras de grandes profissionais qualificados, além da divulgação de culturas minoritárias, mas também expõe a desvalorização das rádios universitárias. “As rádios universitárias devem estimular a criação cultural e o desenvolvimento do espírito científico e do pensamento reflexivo”, afirma. </p>
+                <p>Além disso, a programação educativa não se resume apenas em informar, mas também e principalmente, em explicar. Essas emissoras funcionam como laboratórios educativos, onde teoria e prática se encontram, onde vozes que não lucram, são ouvidas.“O rádio é a internet dos que não tem computador, dos que não sabem falar inglês, dos que não sabem perguntar ao algoritmo”, explica Ciro. Por serem financiadas com recursos públicos, as rádios universitárias têm como compromisso devolver à sociedade o resultado do investimento, por meio de serviços, educação e informações.</p>
+                <p>O pesquisador defende que as universidades são fontes ricas de conhecimento, uma vez que formam profissionais das mais variadas áreas. “A Universidade tem as fontes que podem explicar o mundo”, acrescenta.</p>
+              <p>De acordo com Ciro, em um raio de até dois quilômetros, é possível que o produtor de uma emissora de rádio encontre especialistas qualificados para comentar, praticamente, qualquer tema em debate. Isso demonstra, segundo ele, o potencial das universidades como aliadas na construção de uma comunicação democrática e acessível a todos.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/Além da rádio.jpg" alt="Além do microfone: O trabalho invisível que faz o som acontecer">
+                    <figcaption>Além do microfone: O trabalho invisível que faz o som acontecer.<strong> <br> Foto: Ângelo Figueiredo </strong> </figcaption>
+                </figure>
+
+                <h2>Por mais rádios e TVs Universitárias </h2>
+
+                <p>Atualmente, o Brasil conta com cerca de 190 emissoras universitárias, entre rádios e TVs. Com o objetivo de expandir essa rede, o Ministério das Comunicações, em parceria com a Empresa Brasil de Comunicação (EBC) e as universidades federais, vem trabalhando na ampliação das emissoras públicas no país. A iniciativa inclui a instalação de antenas transmissoras nos campus universitários, permitindo que as instituições operem suas próprias emissoras. Os cursos de Comunicação se comprometem a produzir parte do conteúdo veiculado, criando comissões responsáveis por planejar a periodicidade, os formatos e os temas dos programas, assegurando a qualidade e a relevância do conteúdo transmitido.</p>
+                <p>Com o aumento das rádios e TVs universitárias, a comunicação se tornará cada vez mais acessível e democrática. Os universitários terão oportunidade de evoluir profissionalmente, e por meio disso, propagar a informação e entretenimento ao público. Esse processo também estimula o compromisso social das instituições de ensino, ao aproximá-las da comunidade e dos que buscam na comunicação, integração e representatividade.</p>
+
+            </div>
+
+        </article>
+    </main>
+
+</body>
+</html>

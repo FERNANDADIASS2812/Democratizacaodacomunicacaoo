@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Rio de Janeiro não escuta somente o português</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5e5e5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reportagem-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-subtitulo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .reportagem-imagem-destaque, .galeria-dupla {
+            margin: 40px 0;
+        }
+        
+        .reportagem-imagem-destaque img {
+            max-width: 100%;
+        }
+
+        .reportagem-imagem-destaque img, .galeria-dupla img {
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 80%;
+        }
+        
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .galeria-dupla {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .galeria-dupla figure {
+            flex: 1;
+            min-width: 250px;
+            margin: 0;
+        }
+        .galeria-dupla figure img {
+            width: 100%;
+        }
+        .galeria-dupla .legenda-geral {
+            width: 100%;
+            text-align: center;
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            margin-top: 15px;
+        }
+
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+        
+        .audio-container {
+    display: flex;              /* Ativa o modo Flexbox para alinhamento */
+    justify-content: space-evenly;    /* Centraliza o item filho (o <audio>) horizontalmente */
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="reportagem-container">
+            
+            <header>
+                <h1 class="reportagem-titulo">O Rio de Janeiro não escuta somente o português</h1>
+                <div class="reportagem-meta">
+                    <span>Por Ana Luiza Texeira</span> | 
+                    
+                </div>
+            </header>
+
+            <div class="reportagem-conteudo">
+                <p>‘Maraka'nã’, palavra de origem tupi, refere-se ao barulho semelhante a um chocalho, som parecido com o que o papagaio Maracanã-Guaçu emite. Em abundância, as aves habitavam as redondezas de onde hoje fica o Estádio Jornalista Mário Filho, no bairro Maracanã, na Zona Norte do Rio de Janeiro. Mais conhecido pelo nome dos pássaros, o Estádio do Maracanã pode receber até 78 mil pessoas em suas arquibancadas para eventos variados, mas os jogos de futebol são os grandes protagonistas. Atualmente, os ruídos constantes dos automóveis na Avenida Rei Pelé sobressaem ao canto dos pássaros que deram nome ao espaço.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/FOTO 1 (3).jpg" alt="Mural na entrada da aldeia com a escrita 'Teko Haw'">
+                    <figcaption>O mural logo na entrada da aldeia é uma prévia do que será visto em seu interior. ‘Teko Haw’ pode ser entendido como o modo de ser, viver e pensar. Cada canto é carregado com os costumes da ‘Teko Haw Maraka'nã’.<br><strong>Foto: Clara Reis</strong></figcaption>
+                </figure>
+                
+                <p>A caminhada desde a saída da estação ferroviária até a aldeia não durou nem cinco minutos. De longe, já vemos a construção que, caso o seu redor frenético não fosse um constante lembrete do tempo e sua aparência não tivesse sido castigada pelos séculos, nos levaria em uma viagem temporal a 1865. Foi nesse ano em que o duque de Saxe, genro de Dom Pedro II, doou o prédio para se tornar um centro de pesquisas das culturas indígenas. A construção também abrigou por breves dois anos a Escola Superior de Agricultura e Medicina Veterinária (Esamv), instituição que deu origem à Universidade Federal Rural do Rio de Janeiro (UFRRJ).</p>
+                <p>Ao avançarmos 160 anos e nos aproximarmos da estrutura centenária, conseguimos enxergar os escritos nos muros que cercam a propriedade. Escritos estes que indicam a continuidade do espaço como local de aprendizado. “Universidade Indígena” estampa o entorno do prédio em letras pretas garrafais. Ali está a Aldeia Teko Haw Maraka'nã, bem no meio de uma das regiões mais movimentadas do Rio. Somos bem recepcionadas mas ainda permanecemos acanhadas frente ao contraste de onde tínhamos saído com onde agora estávamos. Ouvimos conversas mas não entendemos o que está sendo dito. Porém, as entonações e expressões corporais revelam trocas cotidianas. O acalmar de uma mãe à sua pequena filha, perguntas sobre os planos para o restante do dia, os diálogos nos soam rápidos demais quando não temos noção das palavras.</p>
+                <p>Observamos os patinhos e pintinhos passando sob a luz do sol que ali é diferente — parece filtrada pelas folhas das árvores — ao mesmo tempo que ouvimos Potyra Guajajara, cacica da aldeia, falar sobre a fruta responsável pelas artes corporais que os indígenas ali exibiam, o jenipapo. Colocamos outros dois sentidos, além do visual, em jogo, agora testamos o tato e o olfato. Sentimos os aspectos aveludados de pequenas folhas com cheiros fortes. Os aromas evocam lembranças que tenho dificuldade em estabelecer de onde vêm, Potyra não sofre a mesma falta de construção explicativa. Ela sabe os nomes específicos e as funções de cada espécie. Da folha de louro no feijão aos chás de boldo e hortelã, tudo tem função e origem. É através das passagens orais por gerações de comunidades indígenas que os costumes e conhecimentos estão entre nós. A oralidade permitiu que tivéssemos contato direto com pessoas responsáveis por assegurar a continuidade de línguas e práticas culturais indígenas. Acompanhar a rotina da forma que fizemos não esconde que o português só estava ali porque nós também estávamos. O ze’egeté, língua do povo Guajajara, derivada do tupi-guarani, é a real naturalidade ali. Quando questionamos José Urutau Guajajara, líder da aldeia, sobre receios de perda de linguagem em meio aos ensinamentos nas escolas que as crianças frequentam, ele não demonstra muita preocupação. “Eles não aprendem o português, eles adquirem o português. Isso chama-se aquisição da linguagem”, disse o cacique.</p>
+                
+                <h3>Ouça o cacique falando:</h3>
+                 <div class="audio-container">
+                <audio controls>
+              <source src="assets/Audios/Cacique-falando.mp3" type="audio/mp3">
+                 </audio>
+                  </div>
+
+                  <h4></h4>
+                <div class="reportagem-imagem-destaque">
+                    <figure>
+                        <img src="assets/img/FOTO 3 (3).jpg" alt="Potyra Guajajara mostrando a fruta jenipapo.">
+                    </figure>
+                    <figcaption class="legenda-geral">Potyra Guajajara, liderança na aldeia, falou sobre as pinturas em seu corpo feitas pelo jenipapo e apresentou a pequena fruta que cresce em seu quintal. Muitas árvores cercam a aldeia, Potyra conhece cada uma delas como a palma de sua mão.<br><strong>Foto: Clara Reis</strong></figcaption>
+                </div>
+
+
+                <p>Conhecer mais do prédio e do terreno através das histórias do cacique nos leva de volta ao século passado. Em meados de 1910, foi criado o Serviço de Proteção aos Índios e Localização dos Trabalhadores Nacionais (SPILTN), que teve o prédio como sede. Mesmo após a mudança para Serviço de Proteção ao Índio (SPI), em 1918, o espaço continuou abrigando o órgão até 1962, quando migrou para Brasília e posteriormente, em 1967, se tornou a Fundação Nacional do Índio (Funai) — organização em atividade até os dias atuais. De 1953 a 1977, o espaço também abrigou o Museu do Índio, que depois foi transferido para um casarão em Botafogo, bairro na Zona Sul do Rio, com a justificativa de que o prédio seria demolido para dar lugar à uma estação de metrô. Nesse caso, acho plausível ficar aliviada com a ineficiência dos serviços públicos. Em 1982, o Ministério da Agricultura concedeu o espaço para a Companhia Brasileira de Alimentos (COBAL). Por um período, aconteciam ali feiras semanais, até que a falta de movimento começou a dar ao prédio previsão de seu aspecto para os próximos anos: o de abandonado.</p>
+                <p>A partir desse momento, chegamos mais perto de como estamos hoje. No dia 20 de outubro de 2006, uma sexta-feira como a que visitamos a aldeia, indígenas de diversas etnias passaram a viver no espaço. Seus costumes e rituais compõem uma herança ancestral, transmitida por registros de voz gravados pelo corpo. Noto o quão natural é o conhecimento da cultura entre os indígenas que vivem ali, sem muitos planejamentos, apenas práticas intrínsecas em seus cernes. O tempo expande as formas que esses saberes podem ser adquiridos. Com a ajuda de inovações tecnológicas, vão de geracional para intencional. O acesso se torna mais simples, a poucos cliques de distância.</p>
+                <p>José Urutau entende as novas tecnologias como auxiliares no processo de disseminar o ze’egeté. “Essa tecnologia é muito perigosa para alguns, mas nesse momento nós a estamos usando em nosso benefício, em benefício da língua”, nos diz o Cacique, em frente à sala de aula da aldeia. Urutau ministra aulas de línguas e culturas tupi-guarani abertas ao público, ele diz que o interesse crescente de não indígenas em aprender as línguas de diferentes povos é como uma luz no fim do túnel.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/FOTO 4 (3).jpg" alt="Sala de aula ou espaço de ensino na aldeia.">
+                    <figcaption>Ali a geografia e a aula de línguas é diferente do usual urbano. No caso dos Guajajara, sua língua é uma língua tronco do tupi-guarani, isto é, um dos muitos ramos da cultura como um todo.<br><strong>Foto: Clara Reis</strong></figcaption>
+                </figure>
+
+                <p>Durante as quase duas décadas em que a aldeia habita o lugar, houveram alguns episódios de violência policial para expulsá-los. Em 2013, policiais do Batalhão do Choque entraram na propriedade durante a madrugada com bombas de gás lacrimogêneo e spray de pimenta. Apesar da justificativa apresentada de que os indígenas e manifestantes que estavam ali se colocavam em perigo, a desocupação forçada do prédio tinha mais a ver com a Copa do Mundo que o Brasil sediaria no ano seguinte.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/FOTO 5 (2).jpg" alt="Retrato do Cacique José Urutau Guajajara.">
+                    <figcaption>José Urutau sabe a história de seu povo detalhadamente. O cacique nos conta sobre a aldeia com uma calma assertiva, sem pressa, mas sem hesitar em nenhum momento.<br><strong>Foto: Clara Reis</strong></figcaption>
+                </figure>
+
+                <p>Mesmo que vivam há poucos metros de um dos principais mobilizadores de fluxo da cidade do Rio, a Aldeia Teko Haw Maraka'nã passa despercebida por quem transita por ali. Quando notada, muitas vezes o teor não é o mais civilizado. De acordo com os relatos de violências sofridas em dias de jogo que ouvimos de Potyra e Urutau, suas tradições culturais e linguísticas desagradam o torcedor que preferiria que o prédio histórico fosse um estacionamento. Já os grandes empresários enxergam a demolição da construção como uma oportunidade de lucro em cima da cultura originária brasileira. No terreno, vivem 50 indígenas Guajajara que reinventam o imaginário pejorativo da sociedade acerca do significado de ser indígena e, principalmente, em um ambiente urbanizado.</p>
+                <p>Em sua pesquisa, o professor da UFRRJ José Ferrão, especialista em comunicações orais, esclarece que oralidade não se resume à fala. A forma compreende conjunturas familiares, espaciais e temporais. Hoje, meios escritos e midiáticos permitem que parte da cultura seja registrada e compartilhada, mas estes pouco se assemelham às reações e interações capturadas pela participação presente.</p>
+                
+                <div class="galeria-dupla">
+                    <figure>
+                        <img src="assets/img/FOTO 6.jpg" alt="Ambiente natural dentro da aldeia.">
+                    </figure>
+                    
+                    </figure>
+                    <figcaption class="legenda-geral">O ambiente contrasta com o externo ao seu redor. A natureza é predominante ao ponto de nos fazer esquecer que estamos em um dos pontos mais movimentados da cidade.<br><strong>Fotos: Ana Luiza Teixeira</strong></figcaption>
+                </div>
+
+                <p>A visita à Aldeia Teko Haw Maraka'nã mantém o tempo suspenso por algumas horas. Cada contato e aprendizado com a natureza amplifica o olhar para o que temos de riqueza no Rio de Janeiro. Escutar o ze’egeté e saber que estar ali é mantê-lo vivo nos deixa com um gosto de sentido, de compreensão. Ao nos despedirmos, voltamos ao Rio que já conhecíamos, mas agora com um novo ramo nascendo das pequenas sementes plantadas pelas palavras que sentimos.</p>
+            </div>
+
+        </article>
+    </main>
+
+</body>
+</html>

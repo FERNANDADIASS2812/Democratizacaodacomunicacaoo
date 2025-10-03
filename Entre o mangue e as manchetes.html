@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre o mangue e as manchetes</title>
+    
+    <style>
+        /* IMPORTAÇÃO DAS FONTES DO GOOGLE */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+        /* VARIÁVEIS DE COR */
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5e5e5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reportagem-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-subtitulo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .reportagem-imagem-destaque {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .reportagem-imagem-destaque img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+        
+        .reportagem-conteudo a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .reportagem-conteudo a:hover {
+            text-decoration: underline;
+        }
+
+        .reportagem-conteudo h2 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #333;
+            font-size: 1.8em;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+
+        /* ESTILO PARA CITAÇÃO EM DESTAQUE (OLHO) */
+        .pull-quote {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4em;
+            font-style: italic;
+            text-align: center;
+            color: var(--cor-texto-secundario);
+            margin: 50px auto;
+            padding: 10px 20px;
+            max-width: 600px;
+            border-left: 4px solid var(--cor-borda);
+            border-right: 4px solid var(--cor-borda);
+            position: relative;
+        }
+        
+        .audio-container {
+    display: flex;
+    justify-content: space-evenly; /* Centraliza o player horizontalmente */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+audio {
+    width: 50%; 
+    max-width: 500px; 
+    height: 50px; /* Ajusta a altura */
+
+    /* Alguns estilos extras que você pode aplicar */
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(49, 49, 108, 0.1);
+    outline: none; /* Remove a borda azul de foco em alguns navegadores */
+}
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="reportagem-container">
+            
+            <header>
+                <h1 class="reportagem-titulo">Entre o mangue e as manchetes</h1>
+                <p class="reportagem-subtitulo"> Como o Jornal "O Cidadão" nasceu para contar a história da Maré de dentro para fora e construiu uma identidade no processo</p>
+                <div class="reportagem-meta">
+                    <span>Por Maria Clara Vinhaes e João Victor Rodrigues</span> | 
+                    
+                </div>
+            </header>
+
+            <div class="reportagem-conteudo">
+                <p>Quando o sol começa a derramar sua luz amarelada sobre os becos da Nova Holanda, as primeiras vozes já cortam o silêncio. O barulho das vans na Linha Amarela se mistura ao som dos motoboys improvisando um pagode. Entre os fios cruzados no alto dos postes, há outra rede que conecta as 16 favelas do Conjunto da Maré: uma teia de palavras que, desde 1999, teima em fazer barulho onde o silêncio era regra. Essa rede tem nome: <a href="https://jornalocidadao.net" target="_blank" rel="noopener noreferrer">“O Cidadão da Maré”</a>.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/IMG_3226.jpg" alt="Apresentação de uma edição do Jornal O Cidadão da Maré, que há 25 anos se dedica a noticiar os principais assuntos da Maré.">
+                    <figcaption>Apresentação de uma edição do Jornal O Cidadão da Maré, que há 25 anos se dedica a noticiar os principais assuntos da Maré.<br><strong>Foto: Maria Clara Vinhaes</strong></figcaption>
+                </figure>
+                
+                <p>Criado no seio do <a href="Ceasm hiperlink mangue e manchetes.html" target="_blank"><strong>CEASM</strong></a> — Centro de Estudos e Ações Solidárias da Maré — o jornal comunitário surgiu como uma resposta ao que não se dizia. À época, quase tudo que saía na imprensa sobre a Maré envolvia tiros, tráfico ou operações policiais. Os rostos apareciam borrados; as vozes, distantes. O jornal veio para fazer o oposto: dar nome aos rostos, contar as histórias inteiras, imprimir memória nas entrelinhas.</p>
+                <p>“O jornal comunitário serve para registrar fisicamente a memória. Se ninguém contar, como é que a gente vai lembrar?”, conta a jornalista do jornal e moradora da Maré, Ana Cristina da Silva. “O Cidadão” se propôs, desde o início, a ser mais do que um jornal. Nasceu como trincheira, como um modo de resistir e existir. Seu território é a Maré, o conjunto de favelas mais populoso do Rio de Janeiro, onde mais de 140 mil pessoas se apertam em menos de 4 km². Um mar de casas sobre terra que um dia foi mangue. Um bairro feito de palafitas e esperança.</p>
+                <p>Ali, entre a Baía de Guanabara e os traçados da Avenida Brasil, da Linha Vermelha e da Linha Amarela, nasceu uma forma própria de identidade — e uma palavra para nomeá-la: mareense. O termo, que surgiu justamente nas páginas do jornal, foi aos poucos deixando de ser apenas uma referência geográfica. Passou a carregar sentimento, história e orgulho. Passou a significar pertencimento. “Quando eu era criança e não conhecia o jornal, eu tinha vergonha de dizer que era da Maré. Porque tudo que se falava era ruim. Hoje eu sei que tem muita coisa boa”, ressalta Ana.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/IMG_3246.jpg" alt="As principais referências culturais e históricas da Maré, no muro que separa o Museu da Maré da comunidade.">
+                    <figcaption>As principais referências culturais e históricas da Maré, no muro que separa o Museu da Maré da comunidade.<br><strong>Foto: Maria Clara Vinhaes</strong></figcaption>
+                </figure>
+
+                <h2>Uma comunicação feita de dentro</h2>
+
+                <p>A ideia por trás de “O Cidadão” era simples e radical: comunicar a partir de dentro, com linguagem própria, temas locais, personagens reais. Em vez de manchetes sensacionalistas sobre operações do BOPE e dados frios de segurança pública, a história que eles querem contar é de que a favela é muito mais que isso.</p>
+                
+                <blockquote class="pull-quote">“A gente não quer só noticiar, a gente quer registrar memória, valorizar conquistas, construir autoestima”<br>– Carolina Vaz, jornalista do O Cidadão.</blockquote>
+
+                <h3>Ouça a jornalista Carolina Vaz:</h3>
+                <div class="audio-container">
+             <audio controls>
+          <source src="assets/Audios/WhatsApp-Audio-2025-07-17-at-3.20.52-PM.mp3" type="audio/mp3">
+           </audio>
+           </div>
+
+
+                <h2>As páginas que a Maré não esquece</h2>
+                
+                <p>Entre as palafitas dos anos 1940 e os feeds digitalizados do presente, a Maré se reinventou muitas vezes. Cada sub-bairro carrega sua própria micro-história. E, em muitas delas, o jornal “O Cidadão” esteve presente como testemunha, narrador e guardião da memória.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/IMG_3312.jpg" alt="No Museu da Maré, uma pipa voa levando sonhos que deveriam ser direitos. Na rabiola, papeizinhos escritos por crianças da comunidade revelam desejos como ter uma casa segura, estudar em uma boa escola, se formar na faculdade e viver com dignidade. Pedidos simples que escancaram a ausência do básico.<br><strong>Foto: Maria Clara Vinhaes">
+                    <figcaption>No Museu da Maré, uma pipa voa levando sonhos que deveriam ser direitos. Na rabiola, papeizinhos escritos por crianças da comunidade revelam desejos como ter uma casa segura, estudar em uma boa escola, se formar na faculdade e viver com dignidade. Pedidos simples que escancaram a ausência do básico.<br><strong>Foto: Maria Clara Vinhaes</strong></figcaption>
+                </figure>
+                
+                <p>Por anos, o jornal comunitário foi impresso e distribuído de casa em casa. Cada edição circulava como uma visita: entrava pelas cozinhas, repousava nas mesas, era guardado com cuidado por moradores que se reconheciam nas páginas. “Quando veem, dizem: ‘Esse jornalzinho aqui eu já recebi em casa!’”, lembra o jornalista do jornal e morador da Maré, Christóvão Carvalho, com um sorriso. Hoje, com a produção migrada para o digital, “o Cidadão” tenta manter sua presença viva nas redes, especialmente no Instagram e no site.</p>
+                <p>Em muitos lugares, o jornal impresso virou peça de museu, lembrança afetiva ou souvenir de uma era analógica. Mas na Maré, ele ainda é lembrado como uma ponte concreta entre a notícia e a casa. A ausência do papel pesa especialmente entre os mais velhos, para quem o impresso não era só um veículo, mas um gesto de presença.</p>
+                <p>“Eu moro na Nova Holanda e só conheci o Cidadão quando participei de uma atividade no Museu da Maré”, conta Ana, destacando o desafio de fazer o jornal circular por todas as comunidades, que nem sempre se percebem como um único território. Essa fragmentação também afeta a comunicação: “Tem muito essa divisão entre comunidades. Cada lado tem sua bolha. Às vezes, as pessoas mais afastadas do CEASM nunca nem ouviram falar do jornal.”</p>
+                
+                <blockquote class="pull-quote">“Se não fosse o jornal “O Cidadão”, muitas histórias que aconteceram aqui na Maré não teriam sido noticiadas em lugar nenhum”<br>– Carolina Vaz.</blockquote>
+                
+                <p>Talvez esse seja o maior feito de um jornal comunitário: permitir que uma comunidade se enxergue — e se lembre. Porque, como diz a frase que ecoa dos comunicadores desse jornal: se ninguém contar, como é que a gente vai lembrar?</p>
+            </div>
+
+        </article>
+    </main>
+
+</body>
+</html>

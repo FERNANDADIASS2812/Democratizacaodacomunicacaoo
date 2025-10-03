@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados da favela, por quem vive nela</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+        :root {
+            --cor-texto-principal: #000000;
+            --cor-texto-secundario: #555555;
+            --cor-fundo: #f3f3f3;
+            --cor-branco: #ffffff;
+            --cor-borda: #e5e5e5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reportagem-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--cor-branco);
+            border: 1px solid var(--cor-borda);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .reportagem-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.0em;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .reportagem-subtitulo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reportagem-meta {
+            font-size: 0.9em;
+            color: var(--cor-texto-secundario);
+            border-bottom: 1px solid var(--cor-borda);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .reportagem-imagem-destaque {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .reportagem-imagem-destaque img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+       .reportagem-imagem-mare img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        
+        .reportagem-imagem-destaque {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .reportagem-imagem-destaque figcaption {
+            font-size: 0.85em;
+            color: var(--cor-texto-secundario);
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+
+        .reportagem-conteudo p {
+            margin-bottom: 1.6em;
+        }
+
+        .reportagem-conteudo h2 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: #333;
+            font-size: 1.8em;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+        
+        .quote-abertura {
+            font-size: 0.95em;
+            font-style: italic;
+            text-align: right;
+            color: var(--cor-texto-secundario);
+            margin: -20px 0 40px 0;
+            padding: 0 10%;
+            border: none;
+        }
+        .quote-abertura cite {
+            display: block;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .pull-quote {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4em;
+            font-style: italic;
+            text-align: center;
+            color: var(--cor-texto-secundario);
+            margin: 50px auto;
+            padding: 10px 20px;
+            max-width: 600px;
+            border-left: 4px solid var(--cor-borda);
+            border-right: 4px solid var(--cor-borda);
+            position: relative;
+        }
+        
+        .info-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #0056b3;
+            margin: 30px 0;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article class="reportagem-container">
+            
+            <header>
+                <h1 class="reportagem-titulo">Dados da favela, por quem vive nela</h1>
+                <p class="reportagem-subtitulo">A narrativa reescrita pela própria comunidade</p>
+                <div class="reportagem-meta">
+                    <span>Por Alan Sena</span> | 
+                </div>
+            </header>
+
+            <div class="reportagem-conteudo">
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/quemsomosa06112024.jpg" alt="Vista panorâmica do Conjunto de Favelas da Maré.">
+                    <figcaption>Conjunto de Favelas da Maré. <br><strong>Foto: Douglas Lopes | Reprodução: Redes da Maré</strong></figcaption>
+                </figure>
+                
+                <blockquote class="quote-abertura">
+                    <p>“Na vida não tem atalho. É muito estudo, e muito trabalho. Agora, o vagabundo, aquele que é bandido, quer atalho. Aí, nós, que somos cidadãos, não vamos aceitar isso. A nossa Polícia Militar não quer matar, mas não podemos permitir cenas como aquela que nós vimos na Cidade de Deus. Se fosse com autorização da ONU, em outros lugares do mundo, nós teríamos autorização para mandar um míssil naquele local e explodir aquelas pessoas.”</p>
+                    <cite>— Wilson Witzel</cite>
+                </blockquote>
+
+                <p>O discurso acima, feito pelo ex-governador do Rio de Janeiro, Wilson Witzel, reforça os padrões estereotipados da relação entre o Estado e as favelas cariocas, presentes desde a demolição dos cortiços no início do século XX no centro da cidade, que resultou no processo de favelização. Quando se trata das favelas, as figuras de Estado e as grandes mídias trabalham em conjunto e de forma indireta - ou direta e totalmente proposital - para estigmatizar e padronizar a violência, a pobreza e a criminalidade como únicas possibilidades para quem vive lá.</p>
+                <p>A capa do jornal “Meia-Hora” do dia 21 de janeiro de 2018 traz como manchete a frase “Piscinas Suspeitas na Maré”, seguida de uma foto onde crianças brincam em piscinas de plástico em uma rua na Nova Holanda. A matéria sugere que os objetos que, na capa, serviam de diversão para as crianças, foram doados pelo tráfico à população local. Dias depois, descobriu-se que a imagem foi retirada, sem autorização e sem os devidos créditos, da página de jornalismo independente “Maré Vive”, quatro dias antes da publicação do jornal. A apuração dos fatos com a polícia, que segundo o editor-chefe do veículo havia sido feita, foi desmentida.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/meiahoracapa-696x784.jpg" alt="Print da capa do jornal Meia-Hora do dia 21 de Janeiro de 2018.">
+                    <figcaption>Print da capa do jornal Meia-Hora do dia 21 de Janeiro de 2018. <br><strong>Foto reprodução: Meia-Hora</strong></figcaption>
+                </figure>
+
+                <p>O momento de lazer foi criminalizado ao cair nas mãos da imprensa, viciada em vilanizar os corpos negros e seus territórios. “A gente tem uma sociedade falando o que é a favela, um território violento, que só tem bandido, que só tem falha. A gente precisa ter uma contra narrativa e dizer que não. A favela tem falta por falta de planejamento urbano. A favela tem falta porque ela é historicamente abandonada pelo poder público, que só entra aqui através da violência, e não na feitura de direitos básicos pra gente”, disse Maria Ribeiro, moradora do Complexo da Maré.</p>
+                
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/Timbau-foto-Raysa.webp" alt="Vista do Complexo da Maré com suas 16 favelas e cerca de 140 mil habitantes.">
+                    <figcaption>O Complexo da Maré é composto por 16 favelas e possui cerca de 140 mil habitantes.<br><strong>Foto: Raysa Castro | Reprodução: Jornal O Cidadão</strong></figcaption>
+                </figure>
+                
+                
+                <div class="reportagem-imagem-mare">
+                    <div class="coluna-imagem">
+                        <figure>
+                            <img src="assets/img/mare_dentro (1).jpg" alt="Mapa das Favelas da Maré.">
+                            
+                        </figure>
+                    </div>
+                   
+                        <p>Crescida na favela de Rubens Vaz, Maria é social media do DataLab, laboratório com objetivo de democratizar a informação por meio da geração, análise e divulgação de dados a partir do Complexo da Maré. A organização sem fins lucrativos é focada em raça, gênero e território e, por meio de seus projetos, busca formar cidadãos da própria comunidade, capazes de discutir pautas relevantes, produzir ciência de dentro para fora, cobrar políticas públicas e criar uma contra-narrativa para um território historicamente marginalizado.</p>
+                        <p>Há mais de 100 anos, as favelas se consolidaram como espaços populares, desenvolvidos a partir da desigualdade social refletida nas formas de interação atualmente. Os cortiços, grandes casarões que abrigavam famílias de baixa renda no centro da cidade, foram demolidos a mando do prefeito da época, Pereira Passos, em uma tentativa higienista e eugenista de transformar o Rio de Janeiro em uma “Paris Tropical”. Essa ação marcou a transição dos cidadãos expulsos para áreas suburbanas mais afastadas do centro e deu início ao processo de formação desses espaços, atualmente chamados de favelas.</p>
+                    
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/LCarioca_Malta_rua_da_carioca_1906_350 (1).jpg" alt="Obras de alargamento na rua da Carioca em 1910, que resultou na derrubada dos cortiços.">
+                    <figcaption>Obras de alargamento na rua da Carioca em 1910, que resultou na derrubada dos cortiços e expulsão dos moradores.<br><strong>Foto: Augusto Malta</strong></figcaption>
+                </figure>
+                
+                <h2>O nascimento da contra-narrativa</h2>
+                
+                <p>O Data Labe nasceu em 2016 no interior do Observatório de Favelas a partir de uma problematização sobre a democratização de dados e informação. Os dados são essenciais para a criação de políticas públicas, pois permitem comprovar, com evidências mensuráveis, problemas que vão além do campo empírico. Falhas na saúde, educação e moradia, por exemplo, precisam ser comprovados quantitativamente para serem enxergados pelas políticas públicas. O laboratório surgiu da necessidade de devolver para os cidadãos periféricos o poder de falar sobre si e sobre os problemas do seu próprio território sem a interferência do Estado. Toda a sociedade é decidida a partir de dados, dados que falam sobre periferia, sobre pessoas pretas, sobre pessoas faveladas, mas que não são do acesso delas, mas que deveriam ser. A população, produtora dos dados que moldam o Estado, é excluída de decisões importantes sobre ela. O Data nasceu a partir do questionamento sobre essa hipocrisia.</p>
+            
+                <div class="info-box">
+                    <p><strong>Em 2018, o Data Labe se torna uma organização independente que funciona a partir de três segmentos: jornalismo, formação e monitoramento e geração cidadã de dados (GCD).</strong></p>   
+                </div>
+                
+                <p>A Geração Cidadã de Dados (GCD) parte da mesma premissa que originou o laboratório: colocar a comunidade como protagonista de sua própria história e território. A GCD nada mais é que um conjunto de ações que dão meios para que uma população produza, recolha e utilize dados para benefício de sua própria comunidade. A intenção é se emancipar do que é produzido apenas pelas grandes instituições e pelo Estado e construir uma narrativa própria, de quem possui local de fala no que diz respeito ao território, raça, sexualidade e gênero. Quando se trata de favela, ninguém mais preparado para falar sobre do que os próprios moradores, que vivenciam todos os dias não apenas as faltas, mas também as riquezas produzidas por uma comunidade historicamente excluída. A GCD funciona para valorizar o trabalho de uma comunidade que conhece o espaço onde reside. A iniciativa gera debates e reflexões para avaliar suas condições e tornar os dados produzidos bem utilizados posteriormente.</p>
+
+                <h2>O verdadeiro protagonista</h2>
+                
+                <blockquote class="pull-quote">“Eu cresci sem saber o que era saneamento básico. Eu tinha lembrança da minha mãe tirando a água da chuva de casa, do meu irmão me trazendo no colo porque a água estava no joelho dele. Eu tinha lembrança de falta de saneamento, mas eu não tinha um comparativo de onde tinha. Era a única realidade que eu conhecia. O Data me mostrou que dava pra reivindicar direitos com os dados.”<br>– Maria Ribeiro</blockquote>
+
+                <p>Partindo do princípio da GCD e do objetivo de potencializar a voz da comunidade que tem tanto a dizer, o Data Lab desenvolveu em 2018 o CocôZap, projeto de geração de dados através da mobilização comunitária. Criado em parceria com a Casa Fluminense e a Redes de Desenvolvimento da Maré, o CocôZap é um canal de denúncias, debate e proposição sobre saneamento básico, abastecimento de água e coleta de lixo na Maré feito pelo WhatsApp. Trata-se de um número de celular que recebe vídeos, fotos, registros e relatos sobre lixo e esgoto com o objetivo de ilustrar o cotidiano insalubre e a falta de serviços públicos dos moradores locais.</p>
+                <p>Após três anos de mobilização, a iniciativa conseguiu alcançar e mapear as 16 comunidades do complexo graças a uma metodologia própria chamada “Embaixadoras do Cocôzap”. Devido à falta de conhecimento e entendimento sobre o projeto, o CocôZap teve baixa adesão dos moradores no início. A solução foi levar o projeto aos moradores ao invés do caminho inverso, é onde entra o trabalho das “Embaixadoras”, moradoras da região que iam às ruas coletar queixas e trabalhar a educação ambiental na comunidade. Elas foram as responsáveis por expandir as bases de dados e dar contexto aos problemas sanitários de 2021, que ao todo teve 231 queixas.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/Captura de tela 2025-06-19 200156.png" alt="Painel de queixas do CocôZap por mês entre 2018 e 2023.">
+                    <figcaption>Painel de queixas do CocôZap por mês entre 2018 e 2023.<br><strong>Reprodução: DataLabe</strong></figcaption>
+                </figure>
+                
+                <p>Ao longo dos anos, o grande trabalho de coleta e geração de dados do CocôZap gerou frutos para a comunidade. Em 2024, dois biodigestores foram instalados na região graças a uma parceria com o coletivo LUTeS. Os equipamentos são frutos de um trabalho sobre educação ambiental feito para os alunos do Colégio Estadual Professor João Borges de Moraes, na Nova Holanda. No mesmo ano, o CocôZap recebeu o prêmio Periferia Viva diretamente do Palácio do Planalto, em Brasília, em cerimônia que reconheceu 178 iniciativas responsáveis por transformar realidades periféricas no Brasil.</p>
+
+                <figure class="reportagem-imagem-destaque">
+                    <img src="assets/img/IMG_2964-2-2048x1536.webp" alt="Maria Ribeiro e Inna Meireles na cerimônia de premiação no Palácio do Planalto.">
+                    <figcaption>Maria Ribeiro e Inna Meireles, parte da equipe do DataLabe, na cerimônia de premiação no Palácio do Planalto.</figcaption>
+                </figure>
+
+                <p>Nascido de um desejo de superar estereótipos e de transformar a comunidade periférica, sempre alvos de objeto de estudos, em produtores da própria ciência, o DataLabe trabalha para potencializar vozes silenciadas por um Estado excludente. Colocar a favela como centro é reescrever uma história que por anos foi manchada por figuras de poder e que transformou a periferia em um ambiente desprovido de potências culturais. Trabalhar essa contra-narrativa é o começo de uma reparação de anos de exclusão, violência e indiferença com esses corpos.</p>
+
+                <blockquote class="pull-quote">“Não é só coletar dados, não só gerar dados, mas também criar essa cultura de empoderamento, essa cultura da gente poder contar nossa história e que ninguém mais fale por nós. Que nada seja feito sem a nossa participação porque a gente sabe muito bem o nosso território, a gente conhece muito bem as nossas faltas e as nossas virtudes. É meio que um cansaço as pessoas falarem tanto por nós”<br>– Maria Ribeiro</blockquote>
+            </div>
+
+        </article>
+    </main>
+
+</body>
+</html>
